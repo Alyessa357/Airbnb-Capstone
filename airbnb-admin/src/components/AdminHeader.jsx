@@ -33,7 +33,8 @@ const AdminHeader = () => {
     const handleLogout = () => {
         setProfileOpen(false);
         logout();
-        window.location.assign("http://localhost:5174");
+        // window.location.assign("http://localhost:5174");
+        window.location.assign("https://airbnb-capstone-frontend-client.onrender.com");
     };
 
     return (

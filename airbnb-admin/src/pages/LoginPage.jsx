@@ -102,7 +102,9 @@ const LoginPage = () => {
                 className="login-page__logo"
                 onClick={(event) => {
                     event.preventDefault();
-                    window.location.assign("http://localhost:5174");
+                    // window.location.assign("http://localhost:5174");
+                    window.location.assign("https://airbnb-capstone-frontend-client.onrender.com");
+                    
                 }}
             >
                 <FaAirbnb size={32} />
