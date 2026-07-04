@@ -1,0 +1,35 @@
+.footer {
+    background: #f7f7f7;
+    margin-top: 80px;
+    border-top: 1px solid #dddddd;
+}
+
+.footer-container {
+    width: 92%;
+    margin: auto;
+    padding: 50px 0;
+    display: grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(220px, 1fr)
+        );
+
+    gap: 40px;
+}
+
+.footer-column h3 {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.footer-column p {
+    margin-bottom: 12px;
+    color: #717171;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.footer-column p:hover {
+    color: black;
+}

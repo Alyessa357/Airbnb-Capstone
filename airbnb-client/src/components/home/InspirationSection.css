@@ -1,0 +1,35 @@
+.inspiration-section {
+    width: 92%;
+    margin: 0 auto;
+    padding: 56px 0 64px;
+
+    background-color: #ffffff;
+}
+
+.inspiration-section h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #222222;
+
+    margin: 0 0 32px;
+}
+
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Responsive design */
+
+@media (max-width: 1024px) {
+    .destination-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .destination-grid {
+        grid-template-columns: 1fr;
+    }
+}

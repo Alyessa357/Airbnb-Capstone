@@ -1,0 +1,257 @@
+.my-trips-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+}
+
+.my-trips-page__content {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 0 80px;
+    flex: 1;
+}
+
+.my-trips-page__title {
+    margin: 0 0 32px;
+
+    font-size: 28px;
+    font-weight: 700;
+    color: #222222;
+}
+
+.my-trips-page__message {
+    font-size: 16px;
+    color: #717171;
+}
+
+.my-trips-table-wrapper {
+    overflow-x: auto;
+}
+
+.my-trips-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    font-size: 14px;
+    color: #222222;
+}
+
+.my-trips-table th,
+.my-trips-table td {
+    border: 1px solid #dddddd;
+    padding: 14px 16px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.my-trips-table th {
+    font-weight: 700;
+    background-color: #ffffff;
+}
+
+.my-trips-table td {
+    font-weight: 400;
+}
+
+.my-trips-table__delete-btn {
+    padding: 8px 18px;
+
+    border: none;
+    border-radius: 6px;
+
+    background-color: #ff385c;
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+}
+
+.my-trips-table__delete-btn:hover {
+    background-color: #e31c5f;
+}
+
+.my-trips-page .footer {
+    margin-top: 0;
+}
+
+
+/* Responsive design */
+
+@media (max-width: 530px) {
+    .my-trips-page__content {
+        width: min(94%, calc(100% - clamp(8px, 3vw, 16px)));
+        padding: clamp(20px, 5vw, 32px) 0 clamp(40px, 8vw, 64px);
+    }
+
+    .my-trips-page__title {
+        margin-bottom: clamp(16px, 4vw, 24px);
+        font-size: clamp(18px, 5.5vw, 24px);
+    }
+
+    .my-trips-page__message {
+        font-size: clamp(13px, 3.5vw, 15px);
+    }
+
+    .my-trips-table-wrapper {
+        overflow-x: visible;
+    }
+
+    .my-trips-table,
+    .my-trips-table thead,
+    .my-trips-table tbody,
+    .my-trips-table tr,
+    .my-trips-table th,
+    .my-trips-table td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .my-trips-table {
+        border-collapse: separate;
+        border-spacing: 0;
+        font-size: clamp(12px, 3.4vw, 14px);
+    }
+
+    .my-trips-table thead {
+        display: none;
+    }
+
+    .my-trips-table tr {
+        margin-bottom: clamp(10px, 3vw, 14px);
+        border: 1px solid #dddddd;
+        border-radius: clamp(6px, 2vw, 10px);
+        overflow: hidden;
+        background: #ffffff;
+    }
+
+    .my-trips-table tr:last-child {
+        margin-bottom: 0;
+    }
+
+    .my-trips-table td {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: clamp(8px, 2.5vw, 14px);
+
+        border: none;
+        border-bottom: 1px solid #eeeeee;
+        padding: clamp(10px, 2.8vw, 14px) clamp(10px, 3vw, 14px);
+
+        text-align: right;
+        min-width: 0;
+    }
+
+    .my-trips-table td:last-child {
+        border-bottom: none;
+        justify-content: flex-end;
+    }
+
+    .my-trips-table td::before {
+        flex-shrink: 0;
+        font-weight: 700;
+        color: #222222;
+        text-align: left;
+    }
+
+    .my-trips-table td:nth-child(1)::before {
+        content: "Booked by";
+    }
+
+    .my-trips-table td:nth-child(2)::before {
+        content: "Property";
+    }
+
+    .my-trips-table td:nth-child(3)::before {
+        content: "Checkin";
+    }
+
+    .my-trips-table td:nth-child(4)::before {
+        content: "Checkout";
+    }
+
+    .my-trips-table td:nth-child(5)::before {
+        content: "Actions";
+        margin-right: auto;
+    }
+
+    .my-trips-table td:nth-child(2) {
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .my-trips-table__delete-btn {
+        padding: clamp(6px, 2vw, 8px) clamp(12px, 3.5vw, 18px);
+        font-size: clamp(12px, 3.2vw, 14px);
+        border-radius: clamp(4px, 1.5vw, 6px);
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 320px) {
+    .my-trips-page__content {
+        width: calc(100% - 12px);
+        padding: 16px 0 36px;
+    }
+
+    .my-trips-page__title {
+        font-size: 17px;
+    }
+
+    .my-trips-table td {
+        padding: 9px 10px;
+        font-size: 12px;
+    }
+
+    .my-trips-table__delete-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 200px) {
+    .my-trips-page__content {
+        width: calc(100% - 8px);
+        padding: 12px 0 28px;
+    }
+
+    .my-trips-page__title {
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+
+    .my-trips-table tr {
+        margin-bottom: 8px;
+        border-radius: 6px;
+    }
+
+    .my-trips-table td {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        padding: 8px;
+        font-size: 11px;
+        text-align: left;
+    }
+
+    .my-trips-table td:last-child {
+        align-items: stretch;
+    }
+
+    .my-trips-table td:nth-child(5)::before {
+        margin-right: 0;
+    }
+
+    .my-trips-table__delete-btn {
+        width: 100%;
+        padding: 8px;
+        font-size: 11px;
+    }
+}

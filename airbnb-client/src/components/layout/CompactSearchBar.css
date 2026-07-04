@@ -1,0 +1,234 @@
+.compact-search-bar {
+    display: flex;
+    align-items: center;
+
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 999px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08),
+        0 4px 12px rgba(0, 0, 0, 0.05);
+
+    max-width: 560px;
+    width: 100%;
+
+    position: relative;
+}
+
+.compact-search-bar__field {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+}
+
+.compact-search-bar__field--guests {
+    flex: 0 0 auto;
+    min-width: 108px;
+}
+
+.compact-search-bar__section {
+    display: block;
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: none;
+    background: transparent;
+
+    text-align: left;
+    cursor: pointer;
+
+    border-radius: 999px;
+    transition: background 0.15s;
+}
+
+.compact-search-bar__section:hover {
+    background: #f7f7f7;
+}
+
+.compact-search-bar__section--guests {
+    padding-right: 8px;
+}
+
+.compact-search-bar__value {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #222222;
+    line-height: 1.2;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.compact-search-bar__value--guests {
+    overflow: visible;
+    text-overflow: unset;
+}
+
+.compact-search-bar__divider {
+    width: 1px;
+    height: 24px;
+    background: #dddddd;
+    flex-shrink: 0;
+}
+
+.compact-search-bar__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+    margin: 6px 6px 6px 0;
+
+    border: none;
+    border-radius: 50%;
+    background: #ff385c;
+    color: #ffffff;
+
+    font-size: 14px;
+    cursor: pointer;
+    flex-shrink: 0;
+
+    transition: background 0.15s;
+}
+
+.compact-search-bar__btn:hover {
+    background: #e31c5f;
+}
+
+.compact-search-bar__dropdown {
+    top: calc(100% + 10px);
+    z-index: 1002;
+}
+
+.compact-search-bar__dropdown--guests {
+    right: 0;
+    left: auto;
+}
+
+/* Responsive design */
+
+@media (max-width: 768px) {
+    .compact-search-bar {
+        max-width: min(560px, 100%);
+    }
+
+    .compact-search-bar__section {
+        padding: 12px 12px;
+    }
+
+    .compact-search-bar__value {
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    .compact-search-bar__field--guests {
+        min-width: 96px;
+    }
+
+    .compact-search-bar__btn {
+        width: 34px;
+        height: 34px;
+        margin: 5px 5px 5px 0;
+        font-size: 13px;
+    }
+
+    .compact-search-bar__dropdown {
+        min-width: min(220px, calc(100vw - 24px));
+        max-width: calc(100vw - 16px);
+    }
+
+    .compact-search-bar__dropdown--guests {
+        min-width: min(280px, calc(100vw - 24px));
+    }
+}
+
+@media (max-width: 480px) {
+    .compact-search-bar__section {
+        padding: 10px 8px;
+    }
+
+    .compact-search-bar__section--guests {
+        padding-right: 4px;
+    }
+
+    .compact-search-bar__value {
+        font-size: 12px;
+    }
+
+    .compact-search-bar__field--guests {
+        min-width: 78px;
+    }
+
+    .compact-search-bar__divider {
+        height: 20px;
+    }
+
+    .compact-search-bar__btn {
+        width: 32px;
+        height: 32px;
+        margin: 4px 4px 4px 0;
+        font-size: 12px;
+    }
+
+    .compact-search-bar__dropdown,
+    .compact-search-bar__dropdown--guests {
+        left: 0;
+        right: auto;
+        min-width: min(240px, calc(100vw - 20px));
+    }
+
+    .compact-search-bar__field--guests .compact-search-bar__dropdown--guests {
+        left: auto;
+        right: 0;
+    }
+}
+
+@media (max-width: 320px) {
+    .compact-search-bar__section {
+        padding: 8px 6px;
+    }
+
+    .compact-search-bar__value {
+        font-size: 11px;
+    }
+
+    .compact-search-bar__field--guests {
+        min-width: 64px;
+    }
+
+    .compact-search-bar__btn {
+        width: 28px;
+        height: 28px;
+        margin: 4px 4px 4px 0;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 200px) {
+    .compact-search-bar__section {
+        padding: 6px 4px;
+    }
+
+    .compact-search-bar__value {
+        font-size: 10px;
+    }
+
+    .compact-search-bar__field--guests {
+        min-width: 52px;
+    }
+
+    .compact-search-bar__divider {
+        height: 16px;
+    }
+
+    .compact-search-bar__btn {
+        width: 24px;
+        height: 24px;
+        margin: 3px 3px 3px 0;
+        font-size: 10px;
+    }
+}
+

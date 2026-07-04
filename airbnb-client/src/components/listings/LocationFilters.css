@@ -1,0 +1,23 @@
+.location-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.location-filters__pill {
+    padding: 10px 16px;
+    border: 1px solid #dddddd;
+    border-radius: 999px;
+    background: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    color: #222222;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.location-filters__pill:hover {
+    border-color: #222222;
+    background: #fafafa;
+}
+

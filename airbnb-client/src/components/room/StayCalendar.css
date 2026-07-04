@@ -1,0 +1,239 @@
+.stay-calendar {
+    padding: 48px 0;
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+}
+
+.stay-calendar h2 {
+    margin: 0 0 8px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #222222;
+}
+
+.stay-calendar__subtitle {
+    margin: 0 0 24px;
+    font-size: 16px;
+    color: #717171;
+    text-decoration: underline;
+}
+
+.stay-calendar__controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.stay-calendar__controls button {
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    color: #222222;
+    cursor: pointer;
+}
+
+.stay-calendar__months {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 48px;
+}
+
+.stay-calendar__month h3 {
+    margin: 0 0 16px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #222222;
+}
+
+.stay-calendar__weekdays,
+.stay-calendar__days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+
+.stay-calendar__weekdays span {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: #717171;
+    padding-bottom: 8px;
+}
+
+.stay-calendar__day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px;
+    font-size: 14px;
+    color: #222222;
+}
+
+.stay-calendar__day--empty {
+    visibility: hidden;
+}
+
+.stay-calendar__day--in-range {
+    background: #f7f7f7;
+}
+
+.stay-calendar__day--edge {
+    background: #222222;
+    color: #ffffff;
+    border-radius: 50%;
+}
+
+.stay-calendar__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+
+.stay-calendar__keyboard {
+    border: none;
+    background: transparent;
+    font-size: 18px;
+    color: #222222;
+    cursor: pointer;
+}
+
+.stay-calendar__clear {
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 600;
+    color: #222222;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+/* Responsive design */
+
+.stay-calendar {
+    padding: clamp(24px, 4vw, 48px) 0;
+    min-width: 0;
+}
+
+.stay-calendar h2 {
+    font-size: clamp(16px, 1.8vw, 22px);
+    overflow-wrap: anywhere;
+}
+
+.stay-calendar__subtitle {
+    font-size: clamp(13px, 1.3vw, 16px);
+    margin-bottom: clamp(16px, 2vw, 24px);
+}
+
+.stay-calendar__months {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(16px, 3vw, 48px);
+    min-width: 0;
+}
+
+.stay-calendar__month {
+    min-width: 0;
+}
+
+.stay-calendar__month h3 {
+    font-size: clamp(13px, 1.3vw, 16px);
+}
+
+.stay-calendar__weekdays span {
+    font-size: clamp(10px, 1vw, 12px);
+}
+
+.stay-calendar__day {
+    height: clamp(28px, 4vw, 42px);
+    font-size: clamp(11px, 1.1vw, 14px);
+}
+
+.stay-calendar__clear,
+.stay-calendar__keyboard {
+    font-size: clamp(12px, 1.2vw, 14px);
+}
+
+@media (max-width: 1100px) {
+    .stay-calendar__months {
+        gap: clamp(12px, 2vw, 28px);
+    }
+
+    .stay-calendar__day {
+        height: clamp(30px, 3.5vw, 38px);
+    }
+}
+
+@media (max-width: 900px) {
+    .stay-calendar__months {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
+
+@media (max-width: 900px) {
+    .stay-calendar__months {
+        grid-template-columns: minmax(0, 1fr);
+        gap: clamp(20px, 3vw, 32px);
+    }
+}
+
+@media (max-width: 480px) {
+    .stay-calendar h2 {
+        font-size: 16px;
+    }
+
+    .stay-calendar__subtitle {
+        font-size: 13px;
+    }
+
+    .stay-calendar__day {
+        height: 32px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 320px) {
+    .stay-calendar {
+        padding: 20px 0;
+    }
+
+    .stay-calendar h2 {
+        font-size: 15px;
+    }
+
+    .stay-calendar__day {
+        height: 28px;
+        font-size: 11px;
+    }
+
+    .stay-calendar__weekdays span {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 200px) {
+    .stay-calendar h2 {
+        font-size: 13px;
+    }
+
+    .stay-calendar__subtitle {
+        font-size: 11px;
+    }
+
+    .stay-calendar__day {
+        height: 22px;
+        font-size: 9px;
+    }
+
+    .stay-calendar__weekdays span {
+        font-size: 8px;
+        padding-bottom: 4px;
+    }
+
+    .stay-calendar__clear,
+    .stay-calendar__keyboard {
+        font-size: 10px;
+    }
+}

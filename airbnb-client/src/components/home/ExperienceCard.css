@@ -1,0 +1,47 @@
+.experience-card {
+    height: 600px;
+
+    border-radius: 8px;
+
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.experience-overlay {
+    position: absolute;
+    top: 52px;
+    left: 62px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 280px;
+}
+
+.experience-overlay h3 {
+    margin: 0;
+
+    font-size: 32px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.15;
+}
+
+.experience-overlay button {
+    margin-top: 16px;
+
+    padding: 10px 16px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #ffffff;
+    color: #222222;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: default;
+}

@@ -1,0 +1,29 @@
+.location-page {
+    min-height: 100vh;
+    background-color: #ffffff;
+}
+
+.location-page__main {
+    width: 92%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 0 80px;
+}
+
+.location-page__subtitle {
+    margin: 0 0 20px;
+
+    font-size: 14px;
+    color: #717171;
+}
+
+.location-page__listings {
+    margin-top: 24px;
+}
+
+.location-page__empty {
+    padding: 48px 0;
+    font-size: 16px;
+    color: #717171;
+    text-align: center;
+}

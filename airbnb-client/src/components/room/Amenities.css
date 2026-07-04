@@ -1,0 +1,122 @@
+.amenities {
+    padding: 48px 0;
+    border-bottom: 1px solid #dddddd;
+}
+
+.amenities h2 {
+    margin: 0 0 24px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #222222;
+}
+
+.amenities__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 32px;
+}
+
+.amenity {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 16px;
+    color: #222222;
+}
+
+.amenity svg {
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.amenities__show-all {
+    margin-top: 24px;
+    padding: 13px 23px;
+    border: 1px solid #222222;
+    border-radius: 8px;
+    background: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    color: #222222;
+    cursor: pointer;
+}
+
+
+/* Responsive design */
+
+.amenities {
+    padding: clamp(24px, 4vw, 48px) 0;
+    min-width: 0;
+}
+
+.amenities h2 {
+    font-size: clamp(16px, 1.8vw, 22px);
+    margin-bottom: clamp(16px, 2vw, 24px);
+}
+
+.amenities__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(12px, 1.5vw, 16px) clamp(12px, 2.5vw, 32px);
+}
+
+.amenity {
+    gap: clamp(10px, 1.5vw, 16px);
+    font-size: clamp(13px, 1.3vw, 16px);
+    min-width: 0;
+}
+
+.amenity span {
+    overflow-wrap: anywhere;
+}
+
+.amenity svg {
+    font-size: clamp(18px, 2vw, 24px);
+}
+
+.amenities__show-all {
+    margin-top: clamp(16px, 2vw, 24px);
+    padding: clamp(10px, 1.2vw, 13px) clamp(14px, 2vw, 23px);
+    font-size: clamp(13px, 1.3vw, 16px);
+}
+
+@media (max-width: 1100px) {
+    .amenities__grid {
+        gap: 14px 20px;
+    }
+}
+
+@media (max-width: 700px) {
+    .amenities__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .amenities__grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 320px) {
+    .amenities h2,
+    .amenity,
+    .amenities__show-all {
+        font-size: 13px;
+    }
+
+    .amenities__show-all {
+        width: 100%;
+    }
+}
+
+@media (max-width: 200px) {
+    .amenities h2,
+    .amenity,
+    .amenities__show-all {
+        font-size: 11px;
+    }
+
+    .amenity svg {
+        font-size: 16px;
+    }
+}
