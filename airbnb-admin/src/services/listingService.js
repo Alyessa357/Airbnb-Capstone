@@ -2,7 +2,8 @@
 import axios from "axios";
 
 // Backend URL
-const API_URL = "http://localhost:5000/api/listings";
+// const API_URL = "http://localhost:5000/api/listings";
+const API_URL = "https://airbnb-capstone-backend-server.onrender.com/api/listings";
 
 
 // Create listing

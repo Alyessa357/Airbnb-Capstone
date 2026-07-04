@@ -3,7 +3,9 @@ import axios from "axios";
 
 
 // Backend API URL
-const API_URL = "http://localhost:5000/api/auth";
+// const API_URL = "http://localhost:5000/api/auth";
+const API_URL = "https://airbnb-capstone-backend-server.onrender.com/api/auth";
+
 
 
 // Login user

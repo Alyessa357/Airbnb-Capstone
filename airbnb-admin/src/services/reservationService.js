@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const API_URL =
-    "http://localhost:5000/api/reservations";
+// const API_URL = "http://localhost:5000/api/reservations";
+const API_URL = "https://airbnb-capstone-backend-server.onrender.com/api/reservations";
 
 
 // Get all reservations
