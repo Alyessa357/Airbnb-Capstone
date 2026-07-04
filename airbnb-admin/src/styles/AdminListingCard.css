@@ -1,0 +1,165 @@
+.admin-listing-card {
+    display: flex;
+    gap: 32px;
+    align-items: stretch;
+
+    padding: 28px 0;
+
+    border-bottom: 1px solid #dddddd;
+    cursor: pointer;
+}
+
+.admin-listing-card:hover {
+    background: #fafafa;
+}
+
+.admin-listing-card__left {
+    width: 220px;
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.admin-listing-card__image {
+    width: 100%;
+    height: 160px;
+
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.admin-listing-card__update-btn,
+.admin-listing-card__delete-btn {
+    width: 100%;
+    padding: 10px 16px;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+
+    cursor: pointer;
+
+    transition: background-color 0.15s ease;
+}
+
+.admin-listing-card__update-btn {
+    background: #4a55f2;
+}
+
+.admin-listing-card__update-btn:hover {
+    background: #3b44d4;
+}
+
+.admin-listing-card__delete-btn {
+    background: #e33e52;
+}
+
+.admin-listing-card__delete-btn:hover {
+    background: #c92a42;
+}
+
+.admin-listing-card__details {
+    flex: 1;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.admin-listing-card__category {
+    margin: 0;
+
+    font-size: 14px;
+    color: #717171;
+    line-height: 1.4;
+}
+
+.admin-listing-card__title {
+    margin: 0;
+
+    font-size: 22px;
+    font-weight: 700;
+    color: #222222;
+    line-height: 1.3;
+}
+
+.admin-listing-card__divider {
+    width: 32px;
+    height: 1px;
+    background: #dddddd;
+    margin: 10px 0 6px;
+}
+
+.admin-listing-card__specs,
+.admin-listing-card__amenities {
+    margin: 0;
+
+    font-size: 14px;
+    color: #717171;
+    line-height: 1.4;
+}
+
+.admin-listing-card__rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: auto;
+    padding-top: 12px;
+
+    font-size: 14px;
+    color: #222222;
+}
+
+.admin-listing-card__rating-score {
+    font-weight: 700;
+}
+
+.admin-listing-card__star {
+    font-size: 12px;
+    color: #ffbc0b;
+}
+
+.admin-listing-card__reviews {
+    color: #717171;
+    font-weight: 400;
+}
+
+.admin-listing-card__price {
+    align-self: center;
+    flex-shrink: 0;
+
+    font-size: 16px;
+    color: #717171;
+    white-space: nowrap;
+}
+
+.admin-listing-card__price span {
+    font-size: 18px;
+    font-weight: 700;
+    color: #222222;
+}
+
+@media (max-width: 900px) {
+    .admin-listing-card {
+        flex-direction: column;
+    }
+
+    .admin-listing-card__left {
+        width: 100%;
+    }
+
+    .admin-listing-card__image {
+        height: 200px;
+    }
+
+    .admin-listing-card__price {
+        align-self: flex-start;
+    }
+}
+

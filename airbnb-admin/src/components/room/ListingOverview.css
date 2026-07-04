@@ -1,0 +1,110 @@
+.listing-overview {
+    padding-bottom: 24px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.listing-overview__host-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.listing-overview__host-row h2 {
+    margin: 0 0 8px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #222222;
+}
+
+.listing-overview__host-row p {
+    margin: 0;
+    font-size: 16px;
+    color: #222222;
+}
+
+.listing-overview__avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.listing-overview__highlights {
+    padding: 24px 0;
+    border-bottom: 1px solid #dddddd;
+}
+
+.listing-overview__highlight {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.listing-overview__highlight:last-child {
+    margin-bottom: 0;
+}
+
+.listing-overview__icon {
+    font-size: 24px;
+    color: #222222;
+    margin-top: 2px;
+}
+
+.listing-overview__highlight-title {
+    margin: 0 0 4px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #222222;
+}
+
+.listing-overview__highlight-text {
+    margin: 0;
+    font-size: 14px;
+    color: #717171;
+    line-height: 1.5;
+}
+
+.listing-overview__highlight-text button {
+    border: none;
+    background: none;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #222222;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.listing-overview__description {
+    padding-top: 24px;
+}
+
+.listing-overview__description p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #222222;
+    white-space: pre-line;
+}
+
+.listing-overview__description--clamped {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.listing-overview__show-more {
+    margin-top: 16px;
+    border: none;
+    background: none;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #222222;
+    text-decoration: underline;
+    cursor: pointer;
+}

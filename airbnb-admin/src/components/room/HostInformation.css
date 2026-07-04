@@ -1,0 +1,91 @@
+.host {
+    padding: 48px 0;
+    border-bottom: 1px solid #dddddd;
+}
+
+.host__profile {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.host__avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.host__profile h2 {
+    margin: 0 0 4px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #222222;
+}
+
+.host__profile p {
+    margin: 0;
+    font-size: 16px;
+    color: #717171;
+}
+
+.host__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.host__badges span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #222222;
+}
+
+.host__badges svg {
+    color: #ff385c;
+}
+
+.host__details h3 {
+    margin: 0 0 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #222222;
+}
+
+.host__details p {
+    margin: 0 0 12px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #222222;
+}
+
+.host__contact {
+    margin-top: 24px;
+    padding: 13px 23px;
+    border: 1px solid #222222;
+    border-radius: 8px;
+    background: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    color: #222222;
+    cursor: pointer;
+}
+
+.host__notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 24px 0 0;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #717171;
+}
+
+.host__notice svg {
+    margin-top: 2px;
+    flex-shrink: 0;
+}

@@ -1,0 +1,16 @@
+/* Main dashboard container */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Right content area */
+.dashboard-content {
+    flex: 1;
+    background-color: #f7f7f7;
+}
+
+/* Page content below header */
+.page-content {
+    padding: 30px;
+}

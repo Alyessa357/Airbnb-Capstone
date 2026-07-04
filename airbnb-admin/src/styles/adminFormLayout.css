@@ -1,0 +1,44 @@
+.admin-form-layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+}
+
+.admin-form-layout__subnav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 20px 40px 0;
+}
+
+.admin-form-layout__nav-btn {
+    padding: 10px 18px;
+
+    border: 1px solid #dddddd;
+    border-radius: 999px;
+    background: #ffffff;
+
+    font-size: 14px;
+    font-weight: 500;
+    color: #222222;
+
+    cursor: pointer;
+
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.admin-form-layout__nav-btn:hover {
+    border-color: #222222;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.admin-form-layout__nav-btn--active {
+    border-color: #222222;
+    font-weight: 600;
+}
+
+.admin-form-layout__content {
+    flex: 1;
+    padding: 32px 40px 64px;
+}

@@ -1,0 +1,48 @@
+.amenities {
+    padding: 48px 0;
+    border-bottom: 1px solid #dddddd;
+}
+
+.amenities h2 {
+    margin: 0 0 24px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #222222;
+}
+
+.amenities__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 32px;
+}
+
+.amenity {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 16px;
+    color: #222222;
+}
+
+.amenity svg {
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.amenities__show-all {
+    margin-top: 24px;
+    padding: 13px 23px;
+    border: 1px solid #222222;
+    border-radius: 8px;
+    background: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    color: #222222;
+    cursor: pointer;
+}
+
+@media (max-width: 700px) {
+    .amenities__grid {
+        grid-template-columns: 1fr;
+    }
+}

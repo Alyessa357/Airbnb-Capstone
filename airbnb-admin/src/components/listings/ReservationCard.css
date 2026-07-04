@@ -1,0 +1,151 @@
+.reservation-card {
+    padding: 24px;
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.reservation-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.reservation-card__price {
+    margin: 0;
+    font-size: 22px;
+    color: #222222;
+}
+
+.reservation-card__price span {
+    font-weight: 700;
+}
+
+.reservation-card__rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    color: #222222;
+}
+
+.reservation-card__rating svg {
+    font-size: 12px;
+}
+
+.reservation-card__reviews {
+    border: none;
+    background: none;
+    padding: 0;
+    font-size: 14px;
+    color: #222222;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.reservation-card__fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid #b0b0b0;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.reservation-card__field {
+    padding: 10px 12px;
+    border-right: 1px solid #b0b0b0;
+    border-bottom: 1px solid #b0b0b0;
+}
+
+.reservation-card__field:nth-child(2) {
+    border-right: none;
+}
+
+.reservation-card__field--guests {
+    grid-column: 1 / -1;
+    border-right: none;
+    border-bottom: none;
+}
+
+.reservation-card__field label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    color: #222222;
+}
+
+.reservation-card__field input,
+.reservation-card__field select {
+    width: 100%;
+    border: none;
+    background: transparent;
+    padding: 0;
+    font-size: 14px;
+    color: #222222;
+    outline: none;
+}
+
+.reservation-card__reserve {
+    width: 100%;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(to right, #e61e4d, #e31c5f, #d70466);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.reservation-card__reserve:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.reservation-card__note {
+    margin: 12px 0 0;
+    text-align: center;
+    font-size: 14px;
+    color: #717171;
+}
+
+.reservation-card__breakdown {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid #dddddd;
+}
+
+.reservation-card__line {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: #222222;
+}
+
+.reservation-card__line--discount span:last-child {
+    color: #008a05;
+}
+
+.reservation-card__total {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #dddddd;
+    font-size: 16px;
+    font-weight: 700;
+    color: #222222;
+}
+
+.reservation-card__selected-dates {
+    margin: 16px 0 0;
+    font-size: 13px;
+    color: #717171;
+}

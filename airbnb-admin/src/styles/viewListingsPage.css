@@ -1,0 +1,27 @@
+.view-listings {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.view-listings__title {
+    margin: 0 0 24px;
+
+    font-size: 22px;
+    font-weight: 500;
+    color: #717171;
+}
+
+.view-listings__message {
+    font-size: 15px;
+    color: #717171;
+    text-align: center;
+    padding: 48px 0;
+}
+
+.view-listings__message--error {
+    color: #ff385c;
+}
+
+.view-listings__list {
+    border-top: 1px solid #dddddd;
+}
