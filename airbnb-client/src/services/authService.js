@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const API_URL =
-    "http://localhost:5000/api/auth";
+    // "http://localhost:5000/api/auth";
+    "https://airbnb-capstone-backend-server.onrender.com/api/auth";
 
 const login = async (userData) => {
 

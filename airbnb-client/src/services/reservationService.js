@@ -3,7 +3,8 @@ import axios from "axios";
 
 // Backend reservation endpoint
 const API_URL =
-    "http://localhost:5000/api/reservations";
+    // "http://localhost:5000/api/reservations";
+    "https://airbnb-capstone-backend-server.onrender.com/api/reservations";
 
 
 // Create reservation

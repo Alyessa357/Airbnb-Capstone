@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const API_URL =
-    "http://localhost:5000/api/listings";
+    // "http://localhost:5000/api/listings";
+    "https://airbnb-capstone-backend-server.onrender.com/api/listings";
 
 
 // Get all listings
