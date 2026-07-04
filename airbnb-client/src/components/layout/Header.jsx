@@ -10,7 +10,9 @@ import useAuth from "../../context/useAuth";
 import "./Header.css";
 
 const ADMIN_LOGIN_URL =
-    import.meta.env.VITE_ADMIN_URL || "http://localhost:5173";
+    // import.meta.env.VITE_ADMIN_URL || "http://localhost:5173";
+    import.meta.env.VITE_ADMIN_URL || "https://airbnb-capstone-admin.onrender.com";
+    
 
 const NAV_LINKS = [
     "Places to stay",
