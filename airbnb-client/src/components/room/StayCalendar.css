@@ -1,3 +1,4 @@
+/* Availability calendar for selecting check-in and check-out dates */
 .stay-calendar {
     padding: 48px 0;
     border-top: 1px solid #dddddd;
@@ -18,6 +19,7 @@
     text-decoration: underline;
 }
 
+/* Previous/next month navigation arrows */
 .stay-calendar__controls {
     display: flex;
     justify-content: space-between;
@@ -32,6 +34,7 @@
     cursor: pointer;
 }
 
+/* Side-by-side two-month calendar layout */
 .stay-calendar__months {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -46,6 +49,7 @@
     color: #222222;
 }
 
+/* Seven-column weekday header and day grid */
 .stay-calendar__weekdays,
 .stay-calendar__days {
     display: grid;
@@ -70,20 +74,24 @@
     color: #222222;
 }
 
+/* Padding cells before the first day of the month */
 .stay-calendar__day--empty {
     visibility: hidden;
 }
 
+/* Dates between check-in and check-out */
 .stay-calendar__day--in-range {
     background: #f7f7f7;
 }
 
+/* Selected check-in or check-out date */
 .stay-calendar__day--edge {
     background: #222222;
     color: #ffffff;
     border-radius: 50%;
 }
 
+/* Keyboard shortcut and clear dates buttons */
 .stay-calendar__footer {
     display: flex;
     align-items: center;
@@ -112,6 +120,7 @@
 
 /* Responsive design */
 
+/* Fluid padding, gaps, and font sizes */
 .stay-calendar {
     padding: clamp(24px, 4vw, 48px) 0;
     min-width: 0;
@@ -165,6 +174,7 @@
     }
 }
 
+/* Stack months vertically on tablets */
 @media (max-width: 900px) {
     .stay-calendar__months {
         grid-template-columns: 1fr;
@@ -213,6 +223,7 @@
     }
 }
 
+/* Extra-tight layout for very narrow viewports */
 @media (max-width: 200px) {
     .stay-calendar h2 {
         font-size: 13px;

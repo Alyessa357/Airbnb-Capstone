@@ -1,8 +1,10 @@
+/* Host profile and contact section on room details */
 .host {
     padding: 48px 0;
     border-bottom: 1px solid #dddddd;
 }
 
+/* Avatar, name, and "Host since" row */
 .host__profile {
     display: flex;
     align-items: center;
@@ -30,6 +32,7 @@
     color: #717171;
 }
 
+/* Superhost, reviews, and response-time badges */
 .host__badges {
     display: flex;
     flex-wrap: wrap;
@@ -49,6 +52,7 @@
     color: #ff385c;
 }
 
+/* Host bio and "During your stay" details */
 .host__details h3 {
     margin: 0 0 12px;
     font-size: 16px;
@@ -63,6 +67,7 @@
     color: #222222;
 }
 
+/* Outlined "Contact host" button */
 .host__contact {
     margin-top: 24px;
     padding: 13px 23px;
@@ -75,6 +80,7 @@
     cursor: pointer;
 }
 
+/* Payment protection disclaimer with icon */
 .host__notice {
     display: flex;
     align-items: flex-start;
@@ -93,6 +99,7 @@
 
 /* Responsive design */
 
+/* Fluid padding and font sizes that scale with viewport */
 .host {
     padding: clamp(24px, 4vw, 48px) 0;
     min-width: 0;
@@ -138,12 +145,14 @@
     font-size: clamp(11px, 1.1vw, 12px);
 }
 
+/* Full-width contact button on small phones */
 @media (max-width: 480px) {
     .host__contact {
         width: 100%;
     }
 }
 
+/* Extra-tight layout for very narrow viewports */
 @media (max-width: 200px) {
     .host__profile h2 {
         font-size: 13px;

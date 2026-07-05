@@ -10,6 +10,7 @@ import CopyrightFooter from "../components/layout/CopyrightFooter";
 
 import "./LocationPage.css";
 
+// Search results page — filters listings by city and guest count from URL params
 const LocationPage = () => {
     const [listings, setListings] = useState([]);
     const [filteredListings, setFilteredListings] = useState([]);
@@ -19,6 +20,7 @@ const LocationPage = () => {
     const city = searchParams.get("city");
     const guestsParam = searchParams.get("guests");
 
+    // Refetch and filter by city when the URL city param changes
     useEffect(() => {
         fetchListings();
     }, [city]);
@@ -43,6 +45,7 @@ const LocationPage = () => {
         }
     };
 
+    // Further filter by minimum guest count when guests param is present
     useEffect(() => {
         let results = [...listings];
 

@@ -4,23 +4,27 @@ import useLocale from "../../context/useLocale";
 
 import "./CopyrightFooter.css";
 
+// Available language options for the footer dropdown
 const LANGUAGES = [
     { value: "en", label: "English" },
     { value: "es", label: "Spanish" },
     { value: "fr", label: "French" },
 ];
 
+// Available currency options for the footer dropdown
 const CURRENCIES = [
     { value: "USD", label: "USD" },
     { value: "EUR", label: "EUR" },
     { value: "GBP", label: "GBP" },
 ];
 
+// Bottom footer — copyright, legal links, locale selectors, and social icons
 const CopyrightFooter = () => {
     const { language, setLanguage, currency, setCurrency } = useLocale();
 
     return (
         <div className="copyright-footer">
+            {/* Copyright and legal links */}
             <div className="copyright-left">
                 <p>© 2026 Airbnb, Inc.</p>
                 <span>·</span>
@@ -32,6 +36,7 @@ const CopyrightFooter = () => {
             </div>
 
             <div className="copyright-right">
+                {/* Language selector — updates global locale context */}
                 <div className="copyright-selector">
                     <FaGlobe aria-hidden="true" />
                     <select
@@ -48,6 +53,7 @@ const CopyrightFooter = () => {
                     </select>
                 </div>
 
+                {/* Currency selector — updates global locale context */}
                 <select
                     className="copyright-selector__select copyright-selector__select--currency"
                     value={currency}

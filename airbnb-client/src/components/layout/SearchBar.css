@@ -1,3 +1,4 @@
+/* Full-width home page search bar — location, check-in, check-out, guests */
 .search-bar {
     display: flex;
     align-items: center;
@@ -11,15 +12,18 @@
     width: 100%;
 }
 
+/* Wrapper for each clickable field section */
 .search-bar__field {
     position: relative;
     flex: 1.2;
 }
 
+/* Location field — rounded left edge of the pill */
 .search-bar__field--location {
     border-radius: 999px 0 0 999px;
 }
 
+/* Clickable section — label and value stacked vertically */
 .search-bar__section {
     display: flex;
     flex-direction: column;
@@ -57,6 +61,7 @@
 }
 
 
+/* Small bold label above each value (e.g. "Location") */
 .search-bar__label {
     font-size: 12px;
     font-weight: 700;
@@ -64,6 +69,7 @@
     line-height: 1.2;
 }
 
+/* Displayed value text (e.g. "Anywhere", "Add dates") */
 .search-bar__value {
     font-size: 14px;
     font-weight: 400;
@@ -77,6 +83,7 @@
     max-width: 100%;
 }
 
+/* Vertical divider between field sections */
 .search-bar__divider {
     width: 1px;
     height: 32px;
@@ -84,6 +91,7 @@
     flex-shrink: 0;
 }
 
+/* Pink circular search button on the right */
 .search-bar__search-btn {
     display: flex;
     align-items: center;
@@ -109,6 +117,7 @@
     background: #e31c5f;
 }
 
+/* Dropdown panel positioned below a field section */
 .search-bar__dropdown {
     position: absolute;
     top: calc(100% + 12px);
@@ -124,6 +133,7 @@
     z-index: 1001;
 }
 
+/* Single item in a location dropdown list */
 .search-bar__dropdown-item {
     display: block;
     width: 100%;
@@ -145,6 +155,7 @@
     background: #f7f7f7;
 }
 
+/* Highlighted selected location in the dropdown */
 .search-bar__dropdown-item--active {
     background: #0088ff;
     color: #ffffff;
@@ -154,11 +165,13 @@
     background: #0088ff;
 }
 
+/* Guests field — fixed minimum width */
 .search-bar__field--guests {
     flex: 0 0 auto;
     min-width: 120px;
 }
 
+/* Date picker dropdown — wider with padding for inputs */
 .search-bar__dropdown--date {
     min-width: 260px;
     padding: 16px;
@@ -193,6 +206,7 @@
     color: #717171;
 }
 
+/* Guests dropdown — aligned to right edge of the field */
 .search-bar__dropdown--guests {
     right: 0;
     left: auto;
@@ -200,6 +214,7 @@
     padding: 16px 20px;
 }
 
+/* Single row in guests dropdown — label and +/- controls */
 .search-bar__guest-row {
     display: flex;
     align-items: center;
@@ -230,6 +245,7 @@
     color: #222222;
 }
 
+/* Circular +/- button for guest count */
 .search-bar__guest-btn {
     display: flex;
     align-items: center;

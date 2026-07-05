@@ -7,6 +7,7 @@ import useAuth from "../context/useAuth";
 
 import "./LoginPage.css";
 
+// Login and sign-up page — mode toggled via ?mode=signup URL param
 const LoginPage = () => {
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
@@ -20,6 +21,7 @@ const LoginPage = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
+    // Clear error when switching between login and sign-up
     useEffect(() => {
         setError("");
     }, [isSignUp]);
@@ -59,6 +61,7 @@ const LoginPage = () => {
         }
     };
 
+    // Register, then auto-login and redirect to search results
     const handleSignUp = async (e) => {
         e.preventDefault();
         setError("");
@@ -228,6 +231,7 @@ const LoginPage = () => {
                             />
                         </div>
 
+                        {/* UI only — not wired to password reset yet */}
                         <button
                             type="button"
                             className="login-page__forgot"

@@ -19,6 +19,7 @@ const MONTH_NAMES = [
 
 const DAY_LABELS = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
 
+// Builds an array of day numbers with null padding for empty cells
 const buildMonthDays = (year, month) => {
     const firstDay = new Date(year, month, 1).getDay();
     const daysInMonth = new Date(year, month + 1, 0).getDate();
@@ -35,6 +36,7 @@ const buildMonthDays = (year, month) => {
     return days;
 };
 
+// Heading and subtitle text based on whether dates are selected
 const formatRangeLabel = (checkIn, checkOut, nights, location) => {
     if (!checkIn || !checkOut) {
         return {
@@ -60,6 +62,7 @@ const formatRangeLabel = (checkIn, checkOut, nights, location) => {
     };
 };
 
+// True when a day falls between check-in and check-out (inclusive)
 const isInRange = (year, month, day, checkIn, checkOut) => {
     if (!checkIn || !checkOut || !day) return false;
 
@@ -70,6 +73,7 @@ const isInRange = (year, month, day, checkIn, checkOut) => {
     return current >= start && current <= end;
 };
 
+// True when a day is the check-in or check-out date
 const isRangeEdge = (year, month, day, checkIn, checkOut) => {
     if (!day) return false;
 
@@ -84,6 +88,7 @@ const isRangeEdge = (year, month, day, checkIn, checkOut) => {
     return current === start || current === end;
 };
 
+// Two-month availability calendar synced with reservation dates
 const StayCalendar = ({
     location,
     checkIn,
@@ -91,6 +96,7 @@ const StayCalendar = ({
     nights,
     onClearDates,
 }) => {
+    // Show the month of check-in, or default to Feb 2022
     const startMonth = checkIn ? new Date(`${checkIn}T00:00:00`) : new Date(2022, 1, 1);
     const monthOne = startMonth.getMonth();
     const yearOne = startMonth.getFullYear();
@@ -141,6 +147,7 @@ const StayCalendar = ({
             <h2>{labels.title}</h2>
             <p className="stay-calendar__subtitle">{labels.subtitle}</p>
 
+            {/* Month navigation — UI only, not wired yet */}
             <div className="stay-calendar__controls">
                 <button type="button" aria-label="Previous month">
                     <FaChevronLeft />

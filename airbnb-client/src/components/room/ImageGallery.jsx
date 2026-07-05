@@ -2,15 +2,18 @@ import { FaTh } from "react-icons/fa";
 
 import "./ImageGallery.css";
 
+// Placeholder when the listing has no uploaded images
 const FALLBACK_IMAGE =
     "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85";
 
+// Hero + four-thumbnail photo grid at the top of room details
 const ImageGallery = ({ listing }) => {
     const images =
         listing.images?.length > 0
             ? listing.images
             : Array(5).fill(FALLBACK_IMAGE);
 
+    // Always show five slots — reuse the first image when fewer are available
     const galleryImages = [
         images[0],
         images[1] || images[0],
@@ -35,6 +38,7 @@ const ImageGallery = ({ listing }) => {
                 ))}
             </div>
 
+            {/* UI only — not wired to a full-screen gallery yet */}
             <button type="button" className="image-gallery__show-all">
                 <FaTh />
                 Show all photos

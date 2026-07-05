@@ -29,6 +29,7 @@ import ReservationCard from "../components/listings/ReservationCard";
 
 import "./RoomDetailsPage.css";
 
+// Full listing page — gallery, details, booking, reviews, and host info
 const RoomDetailsPage = () => {
     const { id } = useParams();
     const navigate = useNavigate();
@@ -70,6 +71,7 @@ const RoomDetailsPage = () => {
               )
             : 0;
 
+    // Total including fees and weekly discount (matches ReservationCard logic)
     const totalPrice =
         nights > 0 && listing
             ? nights * listing.price -
@@ -144,6 +146,7 @@ const RoomDetailsPage = () => {
                 <div className="room-details__title-row">
                     <h1>{listing.title}</h1>
 
+                    {/* Share and save — UI only for now */}
                     <div className="room-details__actions">
                         <button type="button">
                             <FaShare />
@@ -188,6 +191,7 @@ const RoomDetailsPage = () => {
                         />
                     </div>
 
+                    {/* Sticky booking card — dates sync with StayCalendar */}
                     <aside className="room-details__sidebar">
                         <ReservationCard
                             listing={listing}

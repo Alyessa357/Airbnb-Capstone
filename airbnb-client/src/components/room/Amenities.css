@@ -1,3 +1,4 @@
+/* Amenities section on the room details page */
 .amenities {
     padding: 48px 0;
     border-bottom: 1px solid #dddddd;
@@ -10,12 +11,14 @@
     color: #222222;
 }
 
+/* Two-column grid of amenity items */
 .amenities__grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px 32px;
 }
 
+/* Single amenity row — icon and label side by side */
 .amenity {
     display: flex;
     align-items: center;
@@ -29,6 +32,7 @@
     flex-shrink: 0;
 }
 
+/* Outlined button to expand and view all amenities */
 .amenities__show-all {
     margin-top: 24px;
     padding: 13px 23px;
@@ -44,6 +48,7 @@
 
 /* Responsive design */
 
+/* Fluid padding and font sizes that scale with viewport */
 .amenities {
     padding: clamp(24px, 4vw, 48px) 0;
     min-width: 0;
@@ -79,12 +84,14 @@
     font-size: clamp(13px, 1.3vw, 16px);
 }
 
+/* Tighter column gap on medium screens */
 @media (max-width: 1100px) {
     .amenities__grid {
         gap: 14px 20px;
     }
 }
 
+/* Single-column grid on tablets and phones */
 @media (max-width: 700px) {
     .amenities__grid {
         grid-template-columns: 1fr;
@@ -97,6 +104,7 @@
     }
 }
 
+/* Full-width show-all button on very small screens */
 @media (max-width: 320px) {
     .amenities h2,
     .amenity,
@@ -109,6 +117,7 @@
     }
 }
 
+/* Extra-tight layout for very narrow viewports */
 @media (max-width: 200px) {
     .amenities h2,
     .amenity,

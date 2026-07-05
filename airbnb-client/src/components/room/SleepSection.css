@@ -1,3 +1,4 @@
+/* "Where you'll sleep" section on room details */
 .sleep-section {
     padding: 48px 0;
     border-bottom: 1px solid #dddddd;
@@ -10,6 +11,7 @@
     color: #222222;
 }
 
+/* Bedroom card with photo and bed description */
 .sleep-section__card {
     max-width: 320px;
     border: 1px solid #dddddd;
@@ -43,6 +45,7 @@
 
 /* Responsive design */
 
+/* Fluid padding, card width, and font sizes */
 .sleep-section {
     padding: clamp(24px, 4vw, 48px) 0;
     min-width: 0;
@@ -74,6 +77,7 @@
     font-size: clamp(12px, 1.2vw, 14px);
 }
 
+/* Extra-tight layout for very narrow viewports */
 @media (max-width: 200px) {
     .sleep-section h2 {
         font-size: 13px;

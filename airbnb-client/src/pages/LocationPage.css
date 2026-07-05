@@ -1,8 +1,10 @@
+/* Search results page for a selected location */
 .location-page {
     min-height: 100vh;
     background-color: #ffffff;
 }
 
+/* Centered content column for filters and listing cards */
 .location-page__main {
     width: 92%;
     max-width: 1100px;
@@ -10,6 +12,7 @@
     padding: 24px 0 80px;
 }
 
+/* Muted line showing result count or location context */
 .location-page__subtitle {
     margin: 0 0 20px;
 
@@ -21,6 +24,7 @@
     margin-top: 24px;
 }
 
+/* Shown when no listings match the search */
 .location-page__empty {
     padding: 48px 0;
     font-size: 16px;

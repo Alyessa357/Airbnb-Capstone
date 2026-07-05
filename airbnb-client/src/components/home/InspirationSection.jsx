@@ -1,6 +1,7 @@
 import DestinationCard from "./DestinationCard";
 import "./InspirationSection.css";
 
+// Static destination data — image, title, distance, and footer color per card
 const destinations = [
     {
         title: "Sandton City Hotel",
@@ -32,6 +33,7 @@ const destinations = [
     },
 ];
 
+// Home page section — grid of nearby destination cards
 const InspirationSection = () => {
     return (
         <section className="inspiration-section">

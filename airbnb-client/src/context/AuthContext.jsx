@@ -1,12 +1,15 @@
 import { createContext, useState } from "react";
 
+// Shared auth state — consumed via useAuth hook
 export const AuthContext =
     createContext();
 
+// Wraps the app and provides login/logout to all children
 export const AuthProvider = ({
     children
 }) => {
 
+    // JWT restored from localStorage on page load
     const [token, setToken] =
         useState(
             localStorage.getItem(
@@ -23,6 +26,7 @@ export const AuthProvider = ({
             )
         );
 
+    // Save credentials to localStorage and update state
     const login = (
         userData,
         jwtToken
@@ -44,6 +48,7 @@ export const AuthProvider = ({
         setUser(userData);
     };
 
+    // Clear credentials from localStorage and state
     const logout = () => {
 
         localStorage.removeItem(

@@ -1,9 +1,11 @@
+/* Site footer — gray background with top border, pushed below page content */
 .footer {
     background: #f7f7f7;
     margin-top: 80px;
     border-top: 1px solid #dddddd;
 }
 
+/* Responsive grid container for footer link columns */
 .footer-container {
     width: 92%;
     margin: auto;
@@ -18,11 +20,13 @@
     gap: 40px;
 }
 
+/* Column heading (e.g. "Support", "Community") */
 .footer-column h3 {
     margin-bottom: 20px;
     font-size: 16px;
 }
 
+/* Individual footer link text */
 .footer-column p {
     margin-bottom: 12px;
     color: #717171;

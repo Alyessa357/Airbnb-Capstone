@@ -55,6 +55,7 @@ const getMyReservations =
 
     };
 
+// Cancel a reservation by ID (requires auth token)
 const deleteReservation = async (id, token) => {
     const response = await axios.delete(`${API_URL}/${id}`, {
         headers: {

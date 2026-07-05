@@ -1,8 +1,10 @@
+/* Guest reviews section on room details */
 .reviews {
     padding: 0 0 80px 0;
     border-bottom: 1px solid #dddddd;
 }
 
+/* "4.8 · 12 reviews" heading with star icon */
 .reviews__heading {
     display: flex;
     align-items: center;
@@ -18,6 +20,7 @@
     font-size: 16px;
 }
 
+/* Two-column grid of rating category bars (Cleanliness, Accuracy, etc.) */
 .reviews__categories {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -27,6 +30,7 @@
     margin: 0 0 72px;
 }
 
+/* Single category row — label, progress bar, score */
 .reviews__category {
     display: grid;
     grid-template-columns: 130px minmax(0, 1fr) 36px;
@@ -46,6 +50,7 @@
     text-align: right;
 }
 
+/* Horizontal progress bar showing category rating */
 .reviews__bar {
     width: 200px;
     flex-shrink: 0;
@@ -63,6 +68,7 @@
     border-radius: 2px;
 }
 
+/* Two-column grid of individual review cards */
 .reviews__grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -71,6 +77,7 @@
     margin-bottom: 48px;
 }
 
+/* Reviewer avatar, name, and date */
 .review__header {
     display: flex;
     align-items: center;
@@ -105,6 +112,7 @@
     color: #222222;
 }
 
+/* Collapses long review text to three lines */
 .review__comment--clamped {
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -124,6 +132,7 @@
     cursor: pointer;
 }
 
+/* Outlined button to open all reviews */
 .reviews__show-all {
     padding: 13px 23px;
     border: 1px solid #222222;
@@ -136,10 +145,9 @@
 }
 
 
-
-
 /* Responsive design */
 
+/* Fluid padding, gaps, and font sizes */
 .reviews {
     padding: 0 0 clamp(40px, 6vw, 80px);
     min-width: 0;
@@ -234,6 +242,7 @@
     font-size: clamp(13px, 1.3vw, 16px);
 }
 
+/* Tighter column gap on large-but-not-full-width screens */
 @media (max-width: 1400px) {
     .reviews__categories,
     .reviews__grid {
@@ -253,6 +262,7 @@
     }
 }
 
+/* Single-column layout on tablets */
 @media (max-width: 900px) {
     .reviews {
         padding: 48px 0;
@@ -302,6 +312,7 @@
     }
 }
 
+/* Smaller text and tighter category columns on phones */
 @media (max-width: 480px) {
     .reviews__heading {
         font-size: 16px;
@@ -356,6 +367,7 @@
     }
 }
 
+/* Extra-tight layout for very narrow viewports */
 @media (max-width: 200px) {
     .reviews__heading {
         font-size: 13px;

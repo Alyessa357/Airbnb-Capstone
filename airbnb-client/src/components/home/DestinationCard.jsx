@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 import "./DestinationCard.css";
 
+// Clickable destination card — photo, city name, and drive time
 const DestinationCard = ({
     image,
     title,
@@ -19,6 +20,7 @@ const DestinationCard = ({
                 <img src={image} alt={title} />
             </div>
 
+            {/* Colored footer bar — background color passed via prop */}
             <div
                 className="destination-card__info"
                 style={{ backgroundColor: footerColor }}

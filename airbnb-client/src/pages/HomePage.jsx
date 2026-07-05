@@ -10,9 +10,11 @@ import CopyrightFooter from "../components/layout/CopyrightFooter";
 
 import "./HomePage.css";
 
+// Landing page — hero search, inspiration, experiences, and footer
 const HomePage = () => {
     return (
         <>
+            {/* Header and hero banner share a full-width background */}
             <div className="home-hero">
                 <Header />
                 <HeroBanner />

@@ -2,6 +2,7 @@ import { FaAirbnb } from "react-icons/fa";
 
 import "./ShopAirbnbSection.css";
 
+// Three overlapping gift cards — solid color or background image each
 const GIFT_CARDS = [
     {
         id: "red",
@@ -25,9 +26,11 @@ const GIFT_CARDS = [
     },
 ];
 
+// Home page section — gift cards promo and hosting Q&A banner
 const ShopAirbnbSection = () => {
     return (
         <section className="shop-hosting">
+            {/* Gift cards block — heading, button, and stacked card visuals */}
             <div className="gift-cards">
                 <div className="gift-cards__content">
                     <h2>
@@ -63,6 +66,7 @@ const ShopAirbnbSection = () => {
                 </div>
             </div>
 
+            {/* Hosting banner — background photo with "Ask a Superhost" CTA */}
             <div className="hosting-banner">
                 <div className="hosting-banner__overlay">
                     <h2>

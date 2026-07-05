@@ -1,3 +1,4 @@
+/* House rules, safety, and cancellation policy section */
 .things-to-know {
     padding: 48px 0;
     border-bottom: 1px solid #dddddd;
@@ -10,6 +11,7 @@
     color: #222222;
 }
 
+/* Three-column layout — house rules, safety, cancellation */
 .things-to-know__grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -29,6 +31,7 @@
     padding: 0;
 }
 
+/* List items and paragraphs with icon spacing */
 .things-to-know li,
 .things-to-know p {
     display: flex;
@@ -56,6 +59,7 @@
     cursor: pointer;
 }
 
+/* Underlined "Show more" link at the bottom of a column */
 .things-to-know__link {
     border: none;
     background: none;
@@ -70,6 +74,7 @@
 
 /* Responsive design */
 
+/* Fluid padding, gaps, and font sizes */
 .things-to-know {
     padding: clamp(24px, 4vw, 48px) 0;
     min-width: 0;
@@ -97,6 +102,7 @@
     overflow-wrap: anywhere;
 }
 
+/* Two columns on medium screens */
 @media (max-width: 1100px) {
     .things-to-know__grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -104,6 +110,7 @@
     }
 }
 
+/* Single column on tablets and phones */
 @media (max-width: 900px) {
     .things-to-know__grid {
         grid-template-columns: 1fr;
@@ -129,6 +136,7 @@
     }
 }
 
+/* Extra-tight layout for very narrow viewports */
 @media (max-width: 200px) {
     .things-to-know h2 {
         font-size: 13px;

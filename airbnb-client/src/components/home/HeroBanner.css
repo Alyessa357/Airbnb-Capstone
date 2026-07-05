@@ -1,9 +1,11 @@
+/* Hero banner section container — centered with bottom spacing */
 .hero-banner {
     width: 92%;
     margin: 0 auto;
     padding-bottom: 40px;
 }
 
+/* Full-width hero image — 75% viewport height with cover fit */
 .hero-banner__image {
     width: 100%;
     height: 75vh;
@@ -15,6 +17,7 @@
     overflow: hidden;
 }
 
+/* Dark gradient overlay with title and button centered at the bottom */
 .hero-overlay {
     position: absolute;
     inset: 0;
@@ -33,6 +36,7 @@
     text-align: center;
 }
 
+/* White headline text over the hero image */
 .hero-title {
     color: #ffffff;
     font-size: 1.75rem;
@@ -42,6 +46,7 @@
     letter-spacing: -0.01em;
 }
 
+/* Pill-shaped CTA button below the title */
 .hero-button {
     background-color: #ffffff;
     color: #222222;
@@ -55,6 +60,7 @@
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+/* Pink background on button hover */
 .hero-button:hover {
     background-color: #ff385c;
     color: #ffffff;

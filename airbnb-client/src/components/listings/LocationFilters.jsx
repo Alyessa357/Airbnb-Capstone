@@ -1,5 +1,6 @@
 import "./LocationFilters.css";
 
+// Filter options shown as pill buttons (UI only — not wired yet)
 const FILTER_PILLS = [
     "Free cancellation",
     "Type of place",
@@ -8,6 +9,7 @@ const FILTER_PILLS = [
     "More filters",
 ];
 
+// Horizontal row of quick filter pills on the listings page
 const LocationFilters = () => {
     return (
         <div className="location-filters">

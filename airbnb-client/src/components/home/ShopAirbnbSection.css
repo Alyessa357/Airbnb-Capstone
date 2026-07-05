@@ -1,3 +1,4 @@
+/* Shop & hosting section — gift cards block and hosting banner stacked vertically */
 .shop-hosting {
     width: 92%;
     margin: 0 auto;
@@ -12,6 +13,7 @@
 
 /* Gift cards */
 
+/* Gift cards row — text on left, stacked card images on right */
 .gift-cards {
     display: flex;
     align-items: center;
@@ -19,6 +21,7 @@
     gap: 48px;
 }
 
+/* Heading and "Shop now" button area */
 .gift-cards__content {
     flex: 1;
     max-width: 360px;
@@ -33,6 +36,7 @@
     line-height: 1.1;
 }
 
+/* Container for the three overlapping gift card images */
 .gift-cards__stack {
     position: relative;
     flex-shrink: 0;
@@ -41,6 +45,7 @@
     height: 220px;
 }
 
+/* Single gift card image with Airbnb logo centered */
 .gift-card {
     position: absolute;
 
@@ -60,11 +65,13 @@
     overflow: hidden;
 }
 
+/* White Airbnb logo on the gift card */
 .gift-card__logo {
     color: #ffffff;
     filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
 }
 
+/* Left card — slight counter-clockwise tilt, top layer */
 .gift-card--left {
     left: -12px;
     top: 8px;
@@ -72,6 +79,7 @@
     z-index: 3;
 }
 
+/* Center card — more rotation, middle layer */
 .gift-card--center {
     left: 50%;
     top: 58px;
@@ -79,6 +87,7 @@
     z-index: 1;
 }
 
+/* Right card — clockwise tilt, back layer */
 .gift-card--right {
     right: -30px;
     top: 20px;
@@ -88,6 +97,7 @@
 
 /* Hosting banner */
 
+/* Full-width promo banner with background photo */
 .hosting-banner {
     height: 520px;
     border-radius: 12px;
@@ -99,6 +109,7 @@
 
 }
 
+/* Text and CTA positioned over the banner image */
 .hosting-banner__overlay {
     position: absolute;
     top: 48px;
@@ -116,6 +127,7 @@
 
 /* Buttons */
 
+/* Shared button styles for dark and light variants */
 .shop-hosting__btn-dark,
 .shop-hosting__btn-light {
     border: none;
@@ -126,10 +138,12 @@
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+/* Push hosting CTA button down within the banner overlay */
 .hosting-banner button {
     margin-top: 200px;
 }
 
+/* Dark "Shop now" / "Try hosting" button */
 .shop-hosting__btn-dark {
     padding: 12px 20px;
     background-color: #222222;
@@ -140,6 +154,7 @@
     background-color: #ff385c;
 }
 
+/* White "Learn more" button on the gift cards section */
 .shop-hosting__btn-light {
     margin-top: 24px;
     padding: 12px 18px;
@@ -154,6 +169,7 @@
 
 /* Responsive Design */
 
+/* Stack gift cards vertically on medium screens */
 @media (max-width: 900px) {
     .gift-cards {
         flex-direction: column;
@@ -180,6 +196,7 @@
     }
 }
 
+/* Tighter spacing and smaller cards on small screens */
 @media (max-width: 560px) {
     .shop-hosting {
         padding: 64px 0;
@@ -212,6 +229,5 @@
         left: 32px;
     }
 }
-
 
 

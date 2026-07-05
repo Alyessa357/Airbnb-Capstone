@@ -13,12 +13,14 @@ import {
 
 import "./ThingsToKnow.css";
 
+// Static house rules, safety info, and cancellation policy
 const ThingsToKnow = () => {
     return (
         <section className="things-to-know">
             <h2>Things to know</h2>
 
             <div className="things-to-know__grid">
+                {/* Check-in/out times, pets, smoking, parties, etc. */}
                 <div>
                     <h3>House rules</h3>
                     <ul>
@@ -47,6 +49,7 @@ const ThingsToKnow = () => {
                     </ul>
                 </div>
 
+                {/* Cleaning, COVID guidelines, alarms, security deposit */}
                 <div>
                     <h3>Health &amp; safety</h3>
                     <ul>
@@ -74,6 +77,7 @@ const ThingsToKnow = () => {
                     </button>
                 </div>
 
+                {/* Cancellation terms — show-more links are UI only */}
                 <div>
                     <h3>Cancellation policy</h3>
                     <p>Free cancellation before Feb 14</p>

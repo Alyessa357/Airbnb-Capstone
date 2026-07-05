@@ -5,6 +5,7 @@ import { FaSearch } from "react-icons/fa";
 import "./SearchBar.css";
 import "./CompactSearchBar.css";
 
+// Location options for the dropdown
 const LOCATIONS = [
     { label: "All Locations", value: "" },
     { label: "New York", value: "New York" },
@@ -14,6 +15,7 @@ const LOCATIONS = [
     { label: "Thailand", value: "Thailand" },
 ];
 
+// Formats check-in/check-out as "Feb 14-16" or "Feb 28 - Mar 2"
 const formatDateRange = (checkIn, checkOut) => {
     if (!checkIn || !checkOut) return "Add dates";
 
@@ -32,11 +34,13 @@ const formatDateRange = (checkIn, checkOut) => {
     return `${startMonth} ${start.getDate()} - ${endMonth} ${end.getDate()}`;
 };
 
+// Today's date as YYYY-MM-DD for date input min values
 const todayString = () => {
     const today = new Date();
     return today.toISOString().split("T")[0];
 };
 
+// Compact header search bar — location, dates, guests, and search button
 const CompactSearchBar = () => {
     const [activeDropdown, setActiveDropdown] = useState(null);
     const [selectedLocation, setSelectedLocation] = useState(null);
@@ -49,6 +53,7 @@ const CompactSearchBar = () => {
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
 
+    // Sync form state from URL query params on load and when params change
     useEffect(() => {
         const city = searchParams.get("city");
 
@@ -74,6 +79,7 @@ const CompactSearchBar = () => {
         }
     }, [searchParams]);
 
+    // Close any open dropdown when clicking outside the bar
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (
@@ -91,6 +97,7 @@ const CompactSearchBar = () => {
 
     const totalGuests = adults + children;
 
+    // Build URLSearchParams from current filter values
     const buildSearchParams = (cityValue = selectedLocation?.value ?? "") => {
         const params = new URLSearchParams();
 
@@ -102,29 +109,34 @@ const CompactSearchBar = () => {
         return params;
     };
 
+    // Navigate to /location with current search params
     const navigateWithParams = (cityValue = selectedLocation?.value ?? "") => {
         const params = buildSearchParams(cityValue);
         const query = params.toString();
         navigate(`/location${query ? `?${query}` : ""}`);
     };
 
+    // Open/close a dropdown — only one open at a time
     const toggleDropdown = (name) => {
         setActiveDropdown((current) =>
             current === name ? null : name
         );
     };
 
+    // Select location and immediately navigate with updated params
     const handleLocationSelect = (location) => {
         setSelectedLocation(location.value ? location : null);
         setActiveDropdown(null);
         navigateWithParams(location.value);
     };
 
+    // Update check-in and clear check-out if it becomes invalid
     const handleCheckInChange = (value) => {
         setCheckIn(value);
         if (checkOut && value >= checkOut) setCheckOut("");
     };
 
+    // Close dropdowns and navigate to location page with all filters
     const handleSearch = () => {
         setActiveDropdown(null);
         navigateWithParams();
@@ -138,6 +150,7 @@ const CompactSearchBar = () => {
             ? "Add guests"
             : `${totalGuests} guest${totalGuests !== 1 ? "s" : ""}`;
 
+    // Check-out must be at least one day after check-in
     const minCheckOut = checkIn
         ? new Date(
               new Date(`${checkIn}T00:00:00`).getTime() + 86400000
@@ -148,6 +161,7 @@ const CompactSearchBar = () => {
 
     return (
         <div className="compact-search-bar" ref={containerRef}>
+            {/* Location field and dropdown */}
             <div className="compact-search-bar__field">
                 <button
                     type="button"
@@ -198,6 +212,7 @@ const CompactSearchBar = () => {
 
             <div className="compact-search-bar__divider" />
 
+            {/* Dates field and check-in/check-out picker dropdown */}
             <div className="compact-search-bar__field">
                 <button
                     type="button"
@@ -257,6 +272,7 @@ const CompactSearchBar = () => {
 
             <div className="compact-search-bar__divider" />
 
+            {/* Guests field and adults/children counter dropdown */}
             <div className="compact-search-bar__field compact-search-bar__field--guests">
                 <button
                     type="button"
@@ -341,6 +357,7 @@ const CompactSearchBar = () => {
                 )}
             </div>
 
+            {/* Pink search button — navigates with all current filters */}
             <button
                 type="button"
                 className="compact-search-bar__btn"

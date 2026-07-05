@@ -1,3 +1,4 @@
+/* Compact pill-shaped search bar — location, dates, guests, and search button */
 .compact-search-bar {
     display: flex;
     align-items: center;
@@ -14,17 +15,20 @@
     position: relative;
 }
 
+/* Wrapper for each clickable field section */
 .compact-search-bar__field {
     position: relative;
     flex: 1;
     min-width: 0;
 }
 
+/* Guests field — fixed minimum width, doesn't grow like location/dates */
 .compact-search-bar__field--guests {
     flex: 0 0 auto;
     min-width: 108px;
 }
 
+/* Clickable section button — shows current value (location, dates, guests) */
 .compact-search-bar__section {
     display: block;
     width: 100%;
@@ -49,6 +53,7 @@
     padding-right: 8px;
 }
 
+/* Displayed value text inside each section */
 .compact-search-bar__value {
     display: block;
     font-size: 14px;
@@ -61,11 +66,13 @@
     text-overflow: ellipsis;
 }
 
+/* Guests value — allow full text without ellipsis */
 .compact-search-bar__value--guests {
     overflow: visible;
     text-overflow: unset;
 }
 
+/* Vertical divider between field sections */
 .compact-search-bar__divider {
     width: 1px;
     height: 24px;
@@ -73,6 +80,7 @@
     flex-shrink: 0;
 }
 
+/* Pink circular search button on the right */
 .compact-search-bar__btn {
     display: flex;
     align-items: center;
@@ -98,11 +106,13 @@
     background: #e31c5f;
 }
 
+/* Dropdown panel positioned below a field section */
 .compact-search-bar__dropdown {
     top: calc(100% + 10px);
     z-index: 1002;
 }
 
+/* Guests dropdown — aligned to the right edge of the field */
 .compact-search-bar__dropdown--guests {
     right: 0;
     left: auto;
@@ -231,4 +241,3 @@
         font-size: 10px;
     }
 }
-

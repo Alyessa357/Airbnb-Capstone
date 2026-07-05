@@ -1,3 +1,4 @@
+/* Bottom copyright bar — legal links on left, locale/currency on right */
 .copyright-footer {
     margin: auto;
     padding: 20px 50px;
@@ -10,6 +11,7 @@
     border-top: 1px solid #dddddd;
 }
 
+/* Left group — copyright text and legal links */
 .copyright-left {
     display: flex;
     gap: 12px;
@@ -17,6 +19,7 @@
     flex-wrap: wrap;
 }
 
+/* Right group — language, currency, and social icons */
 .copyright-right {
     display: flex;
     gap: 20px;
@@ -24,12 +27,14 @@
     flex-wrap: wrap;
 }
 
+/* Language or currency dropdown wrapper with icon */
 .copyright-selector {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
+/* Styled select dropdown with custom chevron arrow */
 .copyright-selector__select {
     appearance: none;
     border: 1px solid #222222;
@@ -54,6 +59,7 @@
     outline-offset: 2px;
 }
 
+/* Narrower min-width for the currency selector */
 .copyright-selector__select--currency {
     min-width: 80px;
 }

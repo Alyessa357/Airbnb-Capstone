@@ -1,9 +1,11 @@
+/* Border-box sizing for all elements and pseudo-elements */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
+/* Remove default margin/padding; full-width page */
 html,
 body {
     margin: 0;
@@ -16,6 +18,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* React mount point spans full width */
 #root {
     width: 100%;
 }

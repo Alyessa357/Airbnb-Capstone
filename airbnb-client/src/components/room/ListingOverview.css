@@ -1,8 +1,10 @@
+/* Title, host, highlights, and description section on room details */
 .listing-overview {
     padding-bottom: 24px;
     border-bottom: 1px solid #dddddd;
 }
 
+/* "Hosted by" heading with avatar on the right */
 .listing-overview__host-row {
     display: flex;
     align-items: center;
@@ -32,6 +34,7 @@
     object-fit: cover;
 }
 
+/* Guest favorite, location, and cancellation highlight rows */
 .listing-overview__highlights {
     padding: 24px 0;
     border-bottom: 1px solid #dddddd;
@@ -78,6 +81,7 @@
     cursor: pointer;
 }
 
+/* Listing description with optional line clamp */
 .listing-overview__description {
     padding-top: 24px;
 }
@@ -90,6 +94,7 @@
     white-space: pre-line;
 }
 
+/* Collapses description to three lines when not expanded */
 .listing-overview__description--clamped {
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -112,6 +117,7 @@
 
 /* Responsive design */
 
+/* Fluid gaps, avatar size, and font sizes */
 .listing-overview {
     min-width: 0;
 }
@@ -181,6 +187,7 @@
     }
 }
 
+/* Extra-tight layout for very narrow viewports */
 @media (max-width: 200px) {
     .listing-overview__host-row h2 {
         font-size: 13px;

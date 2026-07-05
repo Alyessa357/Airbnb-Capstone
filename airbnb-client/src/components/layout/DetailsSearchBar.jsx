@@ -3,6 +3,7 @@ import { FaSearch } from "react-icons/fa";
 
 import "./DetailsSearchBar.css";
 
+// Compact search pill on listing details — navigates back to home on click
 const DetailsSearchBar = () => {
     const navigate = useNavigate();
 

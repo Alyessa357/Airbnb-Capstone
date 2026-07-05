@@ -1,9 +1,11 @@
+/* Row of location filter pills that wrap on smaller screens */
 .location-filters {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
 }
 
+/* Individual clickable location pill button */
 .location-filters__pill {
     padding: 10px 16px;
     border: 1px solid #dddddd;

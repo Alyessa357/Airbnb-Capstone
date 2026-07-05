@@ -1,3 +1,4 @@
+/* Main content wrapper for the room details page */
 .room-details {
     width: 92%;
     max-width: 1280px;
@@ -5,6 +6,7 @@
     padding: 24px 0 0;
 }
 
+/* Listing title with share/save actions on the right */
 .room-details__title-row {
     display: flex;
     align-items: flex-start;
@@ -42,6 +44,7 @@
     cursor: pointer;
 }
 
+/* Rating, location, and review count below the title */
 .room-details__meta {
     display: flex;
     flex-wrap: wrap;
@@ -72,6 +75,7 @@
     color: #717171;
 }
 
+/* Two-column layout — main content left, booking card right */
 .room-details__body {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 360px;
@@ -85,10 +89,12 @@
     /* width: 880px; */
 }
 
+/* Full-width sections (calendar, reviews) span both columns */
 .room-details__full {
     grid-column: 1 / -1;
 }
 
+/* Sticky reservation card column */
 .room-details__sidebar {
     display: flex;
     flex-direction: column;
@@ -111,6 +117,7 @@
     cursor: pointer;
 }
 
+/* Loading and error states */
 .room-details__message {
     padding: 80px 40px;
     text-align: center;
@@ -124,6 +131,7 @@
 
 /* Responsive design */
 
+/* Stack sidebar below main content on medium screens */
 @media (max-width: 1100px) {
     .room-details__body {
         grid-template-columns: 1fr;
@@ -146,6 +154,7 @@
     }
 }
 
+/* Fluid width, padding, and font sizes */
 .room-details {
     width: min(92%, calc(100% - clamp(16px, 4vw, 48px)));
     max-width: 1280px;
@@ -281,6 +290,7 @@
     }
 }
 
+/* Extra-tight layout for very narrow viewports */
 @media (max-width: 200px) {
     .room-details {
         padding: 8px 4px 0;

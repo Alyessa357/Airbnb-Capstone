@@ -1,3 +1,4 @@
+/* Full-screen login / register page */
 .login-page {
     min-height: 100vh;
     background-color: #ffffff;
@@ -5,6 +6,7 @@
     position: relative;
 }
 
+/* Airbnb logo link in the top-left corner */
 .login-page__logo {
     position: absolute;
     top: 32px;
@@ -22,6 +24,7 @@
     text-decoration: none;
 }
 
+/* Centered form column */
 .login-page__content {
     min-height: 100vh;
 
@@ -51,6 +54,7 @@
     align-items: center;
 }
 
+/* Single form field — label and input */
 .login-field {
     width: 100%;
     margin-bottom: 24px;
@@ -104,6 +108,7 @@
     text-decoration: underline;
 }
 
+/* Blue submit button */
 .login-page__submit {
     width: 100%;
 
@@ -142,6 +147,7 @@
     text-align: center;
 }
 
+/* Login vs Register tab switcher */
 .login-page__toggle {
     display: flex;
     gap: 24px;
@@ -181,6 +187,7 @@
     border-bottom-color: #222222;
 }
 
+/* "Don't have an account? Sign up" link below the form */
 .login-page__switch {
     margin: 24px 0 0;
 

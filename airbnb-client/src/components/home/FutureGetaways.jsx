@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./FutureGetaways.css";
 
+// Category tab labels for the getaways section
 const TABS = [
   "Destinations for arts & culture",
   "Destinations for outdoor adventure",
@@ -10,6 +11,7 @@ const TABS = [
   "Unique Stays",
 ];
 
+// Destination lists keyed by tab — each ends with a "show-more" entry
 const TAB_CONTENT = {
   "Destinations for arts & culture": [
     { city: "Phoenix", region: "Arizona" },
@@ -97,6 +99,7 @@ const TAB_CONTENT = {
   ],
 };
 
+// Tabbed section — category tabs switch the destination grid below
 const FutureGetaways = () => {
   const [activeTab, setActiveTab] = useState(TABS[0]);
 
@@ -106,6 +109,7 @@ const FutureGetaways = () => {
     <section className="future-getaways">
       <h2>Inspiration for future getaways</h2>
 
+      {/* Category tabs — clicking switches the active destination list */}
       <div className="future-tabs">
         {TABS.map((tab) => (
           <button
@@ -121,6 +125,7 @@ const FutureGetaways = () => {
         ))}
       </div>
 
+      {/* Grid of city/region items for the active tab */}
       <div className="future-grid">
         {items.map((item, index) =>
           item.type === "show-more" ? (

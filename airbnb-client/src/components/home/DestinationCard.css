@@ -1,3 +1,4 @@
+/* Destination card — image with city name and distance overlay */
 .destination-card {
     display: flex;
     flex-direction: column;
@@ -7,16 +8,19 @@
     transition: transform 0.2s ease;
 }
 
+/* Slight zoom on hover */
 .destination-card:hover {
     transform: scale(1.02);
 }
 
+/* Image container — fills the card height */
 .destination-card__image {
     flex: 1;
     min-height: 180px;
     overflow: hidden;
 }
 
+/* Cover-fit destination photo */
 .destination-card__image img {
     width: 100%;
     height: 100%;
@@ -24,10 +28,12 @@
     display: block;
 }
 
+/* Text overlay area — city name and distance */
 .destination-card__info {
     padding: 16px;
 }
 
+/* City name heading */
 .destination-card__info h3 {
     margin: 0;
 
@@ -37,6 +43,7 @@
     line-height: 1.25;
 }
 
+/* Distance subtitle (e.g. "45-minute drive") */
 .destination-card__info p {
     margin: 6px 0 0;
 

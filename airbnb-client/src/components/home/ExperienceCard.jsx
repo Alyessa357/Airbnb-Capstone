@@ -1,5 +1,6 @@
 import "./ExperienceCard.css";
 
+// Promo card with background image, title, and CTA button
 const ExperienceCard = ({ image, title, buttonText }) => {
     return (
         <div

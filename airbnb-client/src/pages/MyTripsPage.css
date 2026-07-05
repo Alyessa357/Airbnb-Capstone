@@ -1,3 +1,4 @@
+/* Logged-in user's reservations page */
 .my-trips-page {
     min-height: 100vh;
     display: flex;
@@ -21,11 +22,13 @@
     color: #222222;
 }
 
+/* Loading, error, or empty-state text */
 .my-trips-page__message {
     font-size: 16px;
     color: #717171;
 }
 
+/* Horizontal scroll on narrow desktop/tablet */
 .my-trips-table-wrapper {
     overflow-x: auto;
 }
@@ -55,6 +58,7 @@
     font-weight: 400;
 }
 
+/* Pink cancel-reservation button */
 .my-trips-table__delete-btn {
     padding: 8px 18px;
 
@@ -83,6 +87,7 @@
 
 /* Responsive design */
 
+/* Stack table rows as cards with labeled fields on small phones */
 @media (max-width: 530px) {
     .my-trips-page__content {
         width: min(94%, calc(100% - clamp(8px, 3vw, 16px)));
@@ -154,6 +159,7 @@
         justify-content: flex-end;
     }
 
+    /* Column labels shown via ::before when header row is hidden */
     .my-trips-table td::before {
         flex-shrink: 0;
         font-weight: 700;
@@ -216,6 +222,7 @@
     }
 }
 
+/* Extra-tight card layout for very narrow viewports */
 @media (max-width: 200px) {
     .my-trips-page__content {
         width: calc(100% - 8px);

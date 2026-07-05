@@ -9,17 +9,20 @@ import DetailsSearchBar from "./DetailsSearchBar";
 import useAuth from "../../context/useAuth";
 import "./Header.css";
 
+// Admin app URL for host login/signup redirect
 const ADMIN_LOGIN_URL =
     // import.meta.env.VITE_ADMIN_URL || "http://localhost:5173";
     import.meta.env.VITE_ADMIN_URL || "https://airbnb-capstone-admin.onrender.com";
     
 
+// Center nav links shown on the home page header
 const NAV_LINKS = [
     "Places to stay",
     "Experiences",
     "Online Experiences",
 ];
 
+// Site header — adapts layout via variant: default, simple, results, or details
 const Header = ({ variant = "default" }) => {
     const [profileOpen, setProfileOpen] = useState(false);
     const [hostOpen, setHostOpen] = useState(false);
@@ -37,6 +40,7 @@ const Header = ({ variant = "default" }) => {
     const displayName =
         user?.username || user?.email?.split("@")[0] || "Guest";
 
+    // Close profile and host dropdowns when clicking outside
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (
@@ -59,6 +63,7 @@ const Header = ({ variant = "default" }) => {
             document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
+    // Switch between full SearchBar and CompactSearchBar at 768px
     useEffect(() => {
         const mediaQuery = window.matchMedia("(max-width: 768px)");
 
@@ -73,6 +78,7 @@ const Header = ({ variant = "default" }) => {
             mediaQuery.removeEventListener("change", updateSearchLayout);
     }, []);
 
+    // Redirect to admin app for host login or sign up
     const goToAdminLogin = (signUp = false) => {
         setHostOpen(false);
         const url = signUp
@@ -104,6 +110,7 @@ const Header = ({ variant = "default" }) => {
                     isResults || isDetails ? " header__top--results" : ""
                 }`}
             >
+                {/* Logo — navigates to home on click */}
                 <div
                     className="header__logo"
                     onClick={() => navigate("/")}
@@ -112,6 +119,7 @@ const Header = ({ variant = "default" }) => {
                     <span>airbnb</span>
                 </div>
 
+                {/* Center nav — only on default home header */}
                 {!isSimple && !isResults && !isDetails && (
                     <nav className="header__nav">
                         {NAV_LINKS.map((label) => (
@@ -126,12 +134,14 @@ const Header = ({ variant = "default" }) => {
                     </nav>
                 )}
 
+                {/* Compact search bar on location results page */}
                 {isResults && (
                     <div className="header__compact-search">
                         <CompactSearchBar />
                     </div>
                 )}
 
+                {/* Simple search pill on listing details page */}
                 {isDetails && (
                     <div className="header__compact-search">
                         <DetailsSearchBar />
@@ -145,6 +155,7 @@ const Header = ({ variant = "default" }) => {
                 >
                     {!isSimple && (
                         <>
+                            {/* Become a Host dropdown — links to admin login/signup */}
                             <div
                                 className="header__host-wrapper"
                                 ref={hostRef}
@@ -221,6 +232,7 @@ const Header = ({ variant = "default" }) => {
                         </span>
                     )}
 
+                    {/* Profile menu — login/signup or reservations/logout */}
                     <div
                         className="header__profile-wrapper"
                         ref={profileRef}
@@ -292,6 +304,7 @@ const Header = ({ variant = "default" }) => {
                 </div>
             </div>
 
+            {/* Full or compact search bar below nav — home page only */}
             {!isSimple && !isResults && !isDetails && (
                 <div
                     className={`header__search${
@@ -312,5 +325,4 @@ const Header = ({ variant = "default" }) => {
 };
 
 export default Header;
-
 

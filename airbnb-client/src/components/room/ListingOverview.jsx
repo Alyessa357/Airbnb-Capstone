@@ -8,14 +8,17 @@ import {
 
 import "./ListingOverview.css";
 
+// Fallback description when the listing has none saved
 const DEFAULT_DESCRIPTION =
     "Every booking includes free protection from Host cancellations, listing inaccuracies, and other issues like trouble checking in.";
 
+// Title, host info, highlights, and expandable description
 const ListingOverview = ({ listing }) => {
     const hostName = listing.host?.username || "Ghazal";
     const description = listing.description || DEFAULT_DESCRIPTION;
     const [showMore, setShowMore] = useState(false);
 
+    // Icon + title + text rows below the host heading
     const highlights = [
         {
             icon: <FaHome />,
@@ -42,6 +45,7 @@ const ListingOverview = ({ listing }) => {
 
     return (
         <section className="listing-overview">
+            {/* Listing type, host name, guest/bed/bath counts, and avatar */}
             <div className="listing-overview__host-row">
                 <div>
                     <h2>
@@ -83,6 +87,7 @@ const ListingOverview = ({ listing }) => {
                 ))}
             </div>
 
+            {/* Description clamped to three lines until "Show more" is clicked */}
             <div className="listing-overview__description">
                 <p className={showMore ? "" : "listing-overview__description--clamped"}>
                     {description}

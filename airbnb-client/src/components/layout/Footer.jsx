@@ -1,5 +1,6 @@
 import "./Footer.css";
 
+// Footer link columns — Support, Community, Hosting, About
 const footerSections = [
     {
         title: "Support",
@@ -39,6 +40,7 @@ const footerSections = [
     }
 ];
 
+// Site-wide footer with four columns of links
 const Footer = () => {
     return (
         <footer className="footer">

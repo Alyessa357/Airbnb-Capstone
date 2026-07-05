@@ -9,6 +9,7 @@ import reservationService from "../services/reservationService";
 
 import "./MyTripsPage.css";
 
+// Format ISO date as DD/MM/YYYY for the table
 const formatDate = (dateStr) => {
     const date = new Date(dateStr);
     const day = String(date.getDate()).padStart(2, "0");
@@ -17,6 +18,7 @@ const formatDate = (dateStr) => {
     return `${day}/${month}/${year}`;
 };
 
+// Protected page — shows the logged-in user's reservations
 const MyTripsPage = () => {
     const navigate = useNavigate();
     const { user, token } = useAuth();
@@ -27,6 +29,7 @@ const MyTripsPage = () => {
     const bookedByName =
         user?.username || user?.email?.split("@")[0] || "Guest";
 
+    // Redirect to login if not authenticated; otherwise fetch trips
     useEffect(() => {
         if (!token) {
             navigate("/login");
@@ -48,6 +51,7 @@ const MyTripsPage = () => {
         fetchTrips();
     }, [token, navigate]);
 
+    // Confirm, delete via API, then remove from local state
     const handleDelete = async (id) => {
         if (!window.confirm("Are you sure you want to delete this reservation?")) {
             return;

@@ -4,6 +4,7 @@ import { FaSearch } from "react-icons/fa";
 
 import "./SearchBar.css";
 
+// Location options for the dropdown
 const LOCATIONS = [
     { label: "All Locations", value: "" },
     { label: "New York", value: "New York" },
@@ -13,6 +14,7 @@ const LOCATIONS = [
     { label: "Thailand", value: "Thailand" },
 ];
 
+// Formats a date string for display (e.g. "Feb 14")
 const formatDisplayDate = (dateStr) => {
     if (!dateStr) return "Select date";
 
@@ -23,11 +25,13 @@ const formatDisplayDate = (dateStr) => {
     });
 };
 
+// Today's date as YYYY-MM-DD for date input min values
 const todayString = () => {
     const today = new Date();
     return today.toISOString().split("T")[0];
 };
 
+// Full home page search bar — location, check-in, check-out, guests
 const SearchBar = () => {
     const [activeDropdown, setActiveDropdown] = useState(null);
     const [selectedLocation, setSelectedLocation] = useState(null);
@@ -40,6 +44,7 @@ const SearchBar = () => {
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
 
+    // Sync form state from URL query params on load and when params change
     useEffect(() => {
         const city = searchParams.get("city");
         if (city) {
@@ -68,6 +73,7 @@ const SearchBar = () => {
         }
     }, [searchParams]);
 
+    // Close any open dropdown when clicking outside the bar
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (
@@ -85,6 +91,7 @@ const SearchBar = () => {
 
     const totalGuests = adults + children;
 
+    // Build URLSearchParams from current filter values
     const buildSearchParams = (cityValue = selectedLocation?.value ?? "") => {
         const params = new URLSearchParams();
 
@@ -99,24 +106,28 @@ const SearchBar = () => {
         return params;
     };
 
+    // Navigate to /location with current search params
     const navigateWithParams = (cityValue = selectedLocation?.value ?? "") => {
         const params = buildSearchParams(cityValue);
         const query = params.toString();
         navigate(`/location${query ? `?${query}` : ""}`);
     };
 
+    // Open/close a dropdown — only one open at a time
     const toggleDropdown = (name) => {
         setActiveDropdown((current) =>
             current === name ? null : name
         );
     };
 
+    // Select location and immediately navigate with updated params
     const handleLocationSelect = (location) => {
         setSelectedLocation(location);
         setActiveDropdown(null);
         navigateWithParams(location.value);
     };
 
+    // Update check-in and clear check-out if it becomes invalid
     const handleCheckInChange = (value) => {
         setCheckIn(value);
 
@@ -125,6 +136,7 @@ const SearchBar = () => {
         }
     };
 
+    // Close dropdowns and navigate to location page with all filters
     const handleSearch = () => {
         setActiveDropdown(null);
         navigateWithParams();
@@ -138,6 +150,7 @@ const SearchBar = () => {
             ? "Add guests"
             : `${totalGuests} guest${totalGuests !== 1 ? "s" : ""}`;
 
+    // Check-out must be at least one day after check-in
     const minCheckOut = checkIn
         ? new Date(
               new Date(`${checkIn}T00:00:00`).getTime() +
@@ -149,6 +162,7 @@ const SearchBar = () => {
 
     return (
         <div className="search-bar" ref={containerRef}>
+            {/* Location field and dropdown */}
             <div className="search-bar__field search-bar__field--location">
                 <button
                     type="button"
@@ -202,6 +216,7 @@ const SearchBar = () => {
 
             <div className="search-bar__divider" />
 
+            {/* Check-in date field and picker dropdown */}
             <div className="search-bar__field">
                 <button
                     type="button"
@@ -242,6 +257,7 @@ const SearchBar = () => {
 
             <div className="search-bar__divider" />
 
+            {/* Check-out date field and picker dropdown */}
             <div className="search-bar__field">
                 <button
                     type="button"
@@ -286,6 +302,7 @@ const SearchBar = () => {
 
             <div className="search-bar__divider" />
 
+            {/* Guests field and adults/children counter dropdown */}
             <div className="search-bar__field search-bar__field--guests">
                 <button
                     type="button"
@@ -383,6 +400,7 @@ const SearchBar = () => {
                 )}
             </div>
 
+            {/* Pink search button — navigates with all current filters */}
             <button
                 type="button"
                 className="search-bar__search-btn"

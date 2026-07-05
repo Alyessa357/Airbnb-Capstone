@@ -1,6 +1,7 @@
 import "./HeroBanner.css";
 import { useNavigate } from "react-router-dom";
 
+// Full-width hero banner with headline and "I'm flexible" CTA
 const HeroBanner = () => {
     const navigate = useNavigate();
 
@@ -12,6 +13,7 @@ const HeroBanner = () => {
                         Not sure where to go? Perfect.
                     </h1>
 
+                    {/* Navigates to the location search page */}
                     <button
                         className="hero-button"
                         onClick={() => navigate("/location")}

@@ -1,3 +1,4 @@
+/* Experience promo card — full-height background image with text overlay */
 .experience-card {
     height: 600px;
 
@@ -10,6 +11,7 @@
     overflow: hidden;
 }
 
+/* Text and button positioned over the background image */
 .experience-overlay {
     position: absolute;
     top: 52px;
@@ -20,6 +22,7 @@
     max-width: 280px;
 }
 
+/* Experience title heading (e.g. "Experiences") */
 .experience-overlay h3 {
     margin: 0;
 
@@ -29,6 +32,7 @@
     line-height: 1.15;
 }
 
+/* "Coming soon" or CTA button below the title */
 .experience-overlay button {
     margin-top: 16px;
 

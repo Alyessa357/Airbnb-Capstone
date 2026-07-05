@@ -1,6 +1,7 @@
 import ExperienceCard from "./ExperienceCard";
 import "./ExperienceSection.css";
 
+// Static data for the two experience promo cards
 const experiences = [
     {
         title: "Things to do on your trip",
@@ -16,6 +17,7 @@ const experiences = [
     },
 ];
 
+// Home page section — two experience promo cards in a grid
 const ExperienceSection = () => {
     return (
         <section className="experience-section">

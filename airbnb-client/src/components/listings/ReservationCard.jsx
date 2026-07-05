@@ -5,11 +5,13 @@ import useLocale from "../../context/useLocale";
 
 import "./ReservationCard.css";
 
+// Format YYYY-MM-DD as a readable US date string
 const formatDisplayDate = (dateValue) => {
     if (!dateValue) return "";
     return new Date(`${dateValue}T00:00:00`).toLocaleDateString("en-US");
 };
 
+// Sticky booking widget on the room details page
 const ReservationCard = ({
     listing,
     checkIn,
@@ -24,6 +26,7 @@ const ReservationCard = ({
     const { token } = useAuth();
     const { t, formatPrice } = useLocale();
 
+    // Number of nights between check-in and check-out
     const nights =
         checkIn && checkOut
             ? Math.max(
@@ -34,6 +37,7 @@ const ReservationCard = ({
               )
             : 0;
 
+    // Price breakdown — fees fall back to defaults when not on the listing
     const nightlyRate = listing.price || 0;
     const subtotal = nights * nightlyRate;
     const listingWeeklyDiscount = listing.weeklyDiscount ?? 0;
@@ -50,6 +54,7 @@ const ReservationCard = ({
     const rating = listing.rating || 5.0;
     const reviewCount = listing.reviews || 7;
 
+    // Require login before calling the parent's onReserve handler
     const handleReserve = () => {
         if (!token) {
             alert("Please log in to make a reservation.");
@@ -61,6 +66,7 @@ const ReservationCard = ({
 
     return (
         <div className="reservation-card">
+            {/* Nightly price and star rating */}
             <div className="reservation-card__header">
                 <p className="reservation-card__price">
                     <span>{formatPrice(nightlyRate)}</span> {t("perNight")}
@@ -75,6 +81,7 @@ const ReservationCard = ({
                 </div>
             </div>
 
+            {/* Check-in, check-out, and guest count inputs */}
             <div className="reservation-card__fields">
                 <div className="reservation-card__field">
                     <label htmlFor="check-in">CHECK-IN</label>
@@ -135,6 +142,7 @@ const ReservationCard = ({
                 You won&apos;t be charged yet
             </p>
 
+                {/* Itemized costs — shows $0 until dates are selected */}
                 <div className="reservation-card__breakdown">
                     <div className="reservation-card__line">
                         <span>
@@ -182,6 +190,7 @@ const ReservationCard = ({
                     </div>
                 </div>
 
+            {/* Human-readable date range below the breakdown */}
             {(checkIn || checkOut) && (
                 <p className="reservation-card__selected-dates">
                     {formatDisplayDate(checkIn)} – {formatDisplayDate(checkOut)}

@@ -6,24 +6,29 @@ import useLocale from "../../context/useLocale";
 
 import "./ListingCard.css";
 
+// Single listing row shown in search results
 const ListingCard = ({ listing }) => {
     const navigate = useNavigate();
     const { t, formatPrice } = useLocale();
     const [saved, setSaved] = useState(false);
 
+    // Fallback rating/review count when listing data is missing
     const rating = listing.rating || 4.8;
     const reviewCount = listing.reviews || 0;
 
+    // Toggle save without navigating to the room page
     const handleHeartClick = (e) => {
         e.stopPropagation();
         setSaved((current) => !current);
     };
 
     return (
+        // Whole card is clickable — opens room details
         <article
             className="listing-card"
             onClick={() => navigate(`/rooms/${listing._id}`)}
         >
+            {/* First image or placeholder if none uploaded */}
             <img
                 className="listing-card__image"
                 src={
@@ -34,6 +39,7 @@ const ListingCard = ({ listing }) => {
             />
 
             <div className="listing-card__content">
+                {/* Save/unsave heart — filled when saved */}
                 <button
                     type="button"
                     className="listing-card__heart"
@@ -58,6 +64,7 @@ const ListingCard = ({ listing }) => {
                     {listing.bedrooms} beds · {listing.bathrooms} bath
                 </p>
 
+                {/* Show up to three amenities when available */}
                 {listing.amenities?.length > 0 && (
                     <p className="listing-card__amenities">
                         {listing.amenities.slice(0, 3).join(" · ")}
@@ -66,6 +73,7 @@ const ListingCard = ({ listing }) => {
 
                 <div className="listing-card__divider" />
 
+                {/* Rating on the left, price on the right */}
                 <div className="listing-card__footer">
                     <div className="listing-card__rating">
                         <span className="listing-card__rating-score">
@@ -87,4 +95,3 @@ const ListingCard = ({ listing }) => {
 };
 
 export default ListingCard;
-
