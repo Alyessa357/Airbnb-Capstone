@@ -30,6 +30,10 @@ const UpdateListingPage = () => {
     const [bedrooms, setBedrooms] = useState("");
     const [bathrooms, setBathrooms] = useState("");
     const [price, setPrice] = useState("");
+    const [weeklyDiscount, setWeeklyDiscount] = useState("");
+    const [cleaningFee, setCleaningFee] = useState("");
+    const [serviceFee, setServiceFee] = useState("");
+    const [occupancyTaxes, setOccupancyTaxes] = useState("");
 
     const [amenityInput, setAmenityInput] = useState("");
     const [amenities, setAmenities] = useState([]);
@@ -60,6 +64,10 @@ const UpdateListingPage = () => {
                 setBedrooms(listing.bedrooms);
                 setBathrooms(listing.bathrooms);
                 setPrice(listing.price);
+                setWeeklyDiscount(listing.weeklyDiscount ?? 0);
+                setCleaningFee(listing.cleaningFee ?? 50);
+                setServiceFee(listing.serviceFee ?? 50);
+                setOccupancyTaxes(listing.occupancyTaxes ?? 30);
                 setAmenities(listing.amenities || []);
                 setImages(listing.images || []);
             }
@@ -92,6 +100,10 @@ const UpdateListingPage = () => {
                 bedrooms: Number(bedrooms),
                 bathrooms: Number(bathrooms),
                 price: Number(price),
+                weeklyDiscount: Number(weeklyDiscount),
+                cleaningFee: Number(cleaningFee),
+                serviceFee: Number(serviceFee),
+                occupancyTaxes: Number(occupancyTaxes),
                 amenities,
                 images
             };
@@ -292,7 +304,8 @@ const handleRemoveImage = (imageToRemove) => {
 
                             <div className="create-listing__field">
                                 <label htmlFor="listing-price">
-                                    Price
+                                    {/* Price */}
+                                    Price (per night)
                                 </label>
                                 <input
                                     id="listing-price"
@@ -303,6 +316,68 @@ const handleRemoveImage = (imageToRemove) => {
                                         setPrice(e.target.value)
                                     }
                                 />
+                            </div>
+
+                            <div className="create-listing__field">
+                                <label>Fees &amp; Discounts</label>
+                                <div className="create-listing__fees-grid">
+                                    <div>
+                                        <label htmlFor="listing-weekly-discount">
+                                            Weekly discount
+                                        </label>
+                                        <input
+                                            id="listing-weekly-discount"
+                                            type="number"
+                                            min="0"
+                                            value={weeklyDiscount}
+                                            onChange={(e) =>
+                                                setWeeklyDiscount(e.target.value)
+                                            }
+                                        />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="listing-cleaning-fee">
+                                            Cleaning fee
+                                        </label>
+                                        <input
+                                            id="listing-cleaning-fee"
+                                            type="number"
+                                            min="0"
+                                            value={cleaningFee}
+                                            onChange={(e) =>
+                                                setCleaningFee(e.target.value)
+                                            }
+                                        />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="listing-service-fee">
+                                            Service fee
+                                        </label>
+                                        <input
+                                            id="listing-service-fee"
+                                            type="number"
+                                            min="0"
+                                            value={serviceFee}
+                                            onChange={(e) =>
+                                                setServiceFee(e.target.value)
+                                            }
+                                        />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="listing-occupancy-taxes">
+                                            Occupancy taxes
+                                        </label>
+                                        <input
+                                            id="listing-occupancy-taxes"
+                                            type="number"
+                                            min="0"
+                                            value={occupancyTaxes}
+                                            onChange={(e) =>
+                                                setOccupancyTaxes(e.target.value)
+                                            }
+                                        />
+                                    </div>
+                                </div>
                             </div>
 
                             <div className="create-listing__field">

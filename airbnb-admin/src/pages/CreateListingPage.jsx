@@ -28,6 +28,10 @@ const CreateListingPage = () => {
     const [type, setType] = useState("");
     const [guests, setGuests] = useState("");
     const [price, setPrice] = useState("");
+    const [weeklyDiscount, setWeeklyDiscount] = useState("28");
+    const [cleaningFee, setCleaningFee] = useState("62");
+    const [serviceFee, setServiceFee] = useState("83");
+    const [occupancyTaxes, setOccupancyTaxes] = useState("29");
     const [amenityInput, setAmenityInput] = useState("");
     const [amenities, setAmenities] = useState([]);
     const [images, setImages] = useState([]);
@@ -81,7 +85,11 @@ const CreateListingPage = () => {
             !guests ||
             !bedrooms ||
             !bathrooms ||
-            !price
+            !price ||
+            weeklyDiscount === "" ||
+            cleaningFee === "" ||
+            serviceFee === "" ||
+            occupancyTaxes === ""
         ) {
             setError("Please complete all fields");
             return;
@@ -100,6 +108,10 @@ const CreateListingPage = () => {
                     bedrooms: Number(bedrooms),
                     bathrooms: Number(bathrooms),
                     price: Number(price),
+                    weeklyDiscount: Number(weeklyDiscount),
+                    cleaningFee: Number(cleaningFee),
+                    serviceFee: Number(serviceFee),
+                    occupancyTaxes: Number(occupancyTaxes),
                     amenities,
                     images,
                 },
@@ -116,6 +128,10 @@ const CreateListingPage = () => {
             setType("");
             setGuests("");
             setPrice("");
+            setWeeklyDiscount("28");
+            setCleaningFee("62");
+            setServiceFee("83");
+            setOccupancyTaxes("29");
             setAmenities([]);
             setImages([]);
             setImageUrl("");
@@ -249,7 +265,8 @@ const CreateListingPage = () => {
 
                             <div className="create-listing__field">
                                 <label htmlFor="listing-price">
-                                    Price
+                                    {/* Price */}
+                                    Price (per night)
                                 </label>
                                 <input
                                     id="listing-price"
@@ -260,6 +277,72 @@ const CreateListingPage = () => {
                                         setPrice(e.target.value)
                                     }
                                 />
+                            </div>
+
+                            <div className="create-listing__field">
+                                <label>Fees &amp; Discounts</label>
+                                <div className="create-listing__fees-grid">
+                                    <div>
+                                        <label htmlFor="listing-weekly-discount">
+                                            Weekly discount
+                                        </label>
+                                        <input
+                                            id="listing-weekly-discount"
+                                            type="number"
+                                            min="0"
+                                            placeholder="28"
+                                            value={weeklyDiscount}
+                                            onChange={(e) =>
+                                                setWeeklyDiscount(e.target.value)
+                                            }
+                                        />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="listing-cleaning-fee">
+                                            Cleaning fee
+                                        </label>
+                                        <input
+                                            id="listing-cleaning-fee"
+                                            type="number"
+                                            min="0"
+                                            placeholder="62"
+                                            value={cleaningFee}
+                                            onChange={(e) =>
+                                                setCleaningFee(e.target.value)
+                                            }
+                                        />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="listing-service-fee">
+                                            Service fee
+                                        </label>
+                                        <input
+                                            id="listing-service-fee"
+                                            type="number"
+                                            min="0"
+                                            placeholder="83"
+                                            value={serviceFee}
+                                            onChange={(e) =>
+                                                setServiceFee(e.target.value)
+                                            }
+                                        />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="listing-occupancy-taxes">
+                                            Occupancy taxes
+                                        </label>
+                                        <input
+                                            id="listing-occupancy-taxes"
+                                            type="number"
+                                            min="0"
+                                            placeholder="29"
+                                            value={occupancyTaxes}
+                                            onChange={(e) =>
+                                                setOccupancyTaxes(e.target.value)
+                                            }
+                                        />
+                                    </div>
+                                </div>
                             </div>
 
                             <div className="create-listing__field">

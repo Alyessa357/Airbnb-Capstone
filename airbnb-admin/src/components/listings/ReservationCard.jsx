@@ -36,10 +36,10 @@ const ReservationCard = ({
     const nightlyRate = listing.price || 0;
     const subtotal = nights * nightlyRate;
     const weeklyDiscount =
-        nights >= 7 ? listing.weeklyDiscount || 28 : 0;
-    const cleaningFee = listing.cleaningFee ?? 62;
-    const serviceFee = listing.serviceFee ?? 83;
-    const occupancyTaxes = listing.occupancyTaxes ?? 29;
+        nights >= 7 ? (listing.weeklyDiscount ?? 0) : 0;
+    const cleaningFee = listing.cleaningFee ?? 50;
+    const serviceFee = listing.serviceFee ?? 50;
+    const occupancyTaxes = listing.occupancyTaxes ?? 30;
     const total =
         subtotal - weeklyDiscount + cleaningFee + serviceFee + occupancyTaxes;
 
