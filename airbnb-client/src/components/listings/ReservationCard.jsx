@@ -28,20 +28,24 @@ const ReservationCard = ({
         checkIn && checkOut
             ? Math.max(
                   0,
-                  (new Date(checkOut) - new Date(checkIn)) /
+                  (new Date(`${checkOut}T00:00:00`) -
+                      new Date(`${checkIn}T00:00:00`)) /
                       (1000 * 60 * 60 * 24)
               )
             : 0;
 
     const nightlyRate = listing.price || 0;
     const subtotal = nights * nightlyRate;
+    const listingWeeklyDiscount = listing.weeklyDiscount ?? 0;
     const weeklyDiscount =
-        nights >= 7 ? listing.weeklyDiscount || 28 : 0;
-    const cleaningFee = listing.cleaningFee ?? 62;
-    const serviceFee = listing.serviceFee ?? 83;
-    const occupancyTaxes = listing.occupancyTaxes ?? 29;
+        nights >= 7 ? listingWeeklyDiscount : 0;
+    const cleaningFee = listing.cleaningFee ?? 50;
+    const serviceFee = listing.serviceFee ?? 50;
+    const occupancyTaxes = listing.occupancyTaxes ?? 30;
     const total =
         subtotal - weeklyDiscount + cleaningFee + serviceFee + occupancyTaxes;
+
+    const hasDates = nights > 0;
 
     const rating = listing.rating || 5.0;
     const reviewCount = listing.reviews || 7;
@@ -131,44 +135,52 @@ const ReservationCard = ({
                 You won&apos;t be charged yet
             </p>
 
-            {nights > 0 && (
                 <div className="reservation-card__breakdown">
                     <div className="reservation-card__line">
                         <span>
-                            {formatPrice(nightlyRate)} x {nights}{" "}
-                            {nights > 1 ? t("nights") : t("night")}
+                        {formatPrice(nightlyRate)} x {nights}{" "}
+                        {nights === 1 ? t("night") : t("nights")}
                         </span>
-                        <span>{formatPrice(subtotal)}</span>
+                        <span>{formatPrice(hasDates ? subtotal : 0)}</span>
                     </div>
 
-                    {weeklyDiscount > 0 && (
-                        <div className="reservation-card__line reservation-card__line--discount">
-                            <span>{t("weeklyDiscount")}</span>
-                            <span>-{formatPrice(weeklyDiscount)}</span>
-                        </div>
-                    )}
+                    <div className={`reservation-card__line${ weeklyDiscount > 0 ? " reservation-card__line--discount" : "" }`}>
+                        <span>{t("weeklyDiscount")}</span>
+                        <span>
+                            {weeklyDiscount > 0
+                                ? `-${formatPrice(weeklyDiscount)}`
+                                : formatPrice(0)}
+                        </span>
+                    </div>
 
                     <div className="reservation-card__line">
                         <span>{t("cleaningFee")}</span>
-                        <span>{formatPrice(cleaningFee)}</span>
+                        <span>
+                            {hasDates ? formatPrice(cleaningFee) : formatPrice(0)}
+                        </span>
                     </div>
 
                     <div className="reservation-card__line">
                         <span>{t("serviceFee")}</span>
-                        <span>{formatPrice(serviceFee)}</span>
+                        <span>
+                            {hasDates ? formatPrice(serviceFee) : formatPrice(0)}
+                        </span>
                     </div>
 
                     <div className="reservation-card__line">
                         <span>{t("occupancyTaxes")}</span>
-                        <span>{formatPrice(occupancyTaxes)}</span>
+                        <span>
+                            {hasDates
+                                ? formatPrice(occupancyTaxes)
+                                : formatPrice(0)}
+                        </span>
                     </div>
 
                     <div className="reservation-card__total">
                         <span>{t("total")}</span>
-                        <span>{formatPrice(total)}</span>
+                        <span>{formatPrice(hasDates ? total : 0)}</span>
                     </div>
                 </div>
-            )}
 
             {(checkIn || checkOut) && (
                 <p className="reservation-card__selected-dates">

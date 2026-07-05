@@ -64,7 +64,8 @@ const RoomDetailsPage = () => {
         checkIn && checkOut
             ? Math.max(
                   0,
-                  (new Date(checkOut) - new Date(checkIn)) /
+                  (new Date(`${checkOut}T00:00:00`) -
+                      new Date(`${checkIn}T00:00:00`)) /
                       (1000 * 60 * 60 * 24)
               )
             : 0;
@@ -72,10 +73,10 @@ const RoomDetailsPage = () => {
     const totalPrice =
         nights > 0 && listing
             ? nights * listing.price -
-              (nights >= 7 ? listing.weeklyDiscount || 28 : 0) +
-              (listing.cleaningFee ?? 62) +
-              (listing.serviceFee ?? 83) +
-              (listing.occupancyTaxes ?? 29)
+              (nights >= 7 ? listing.weeklyDiscount ?? 0 : 0) +
+              (listing.cleaningFee ?? 50) +
+              (listing.serviceFee ?? 50) +
+              (listing.occupancyTaxes ?? 30)
             : 0;
 
     const handleReservation = async () => {
