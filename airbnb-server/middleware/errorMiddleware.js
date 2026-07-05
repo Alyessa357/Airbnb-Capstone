@@ -1,3 +1,4 @@
+// Catches errors passed via next(err) and sends a JSON response
 const errorHandler = (
   err,
   req,
@@ -5,6 +6,7 @@ const errorHandler = (
   next
 ) => {
 
+// Use existing status code, or default to 500 if still 200
   const statusCode =
     res.statusCode === 200
       ? 500

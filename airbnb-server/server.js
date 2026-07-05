@@ -13,6 +13,9 @@ const listingRoutes = require("./routes/listingRoutes");
 const authRoutes = require("./routes/authRoutes");
 const reservationRoutes = require("./routes/reservationRoutes");
 
+// Import error handler
+const { errorHandler } = require("./middleware/errorMiddleware");
+
 // Create express application
 const app = express();
 
@@ -41,6 +44,9 @@ app.get("/", (req, res) => {
   });
 
 });
+
+// Error handler — must be registered after all routes
+app.use(errorHandler);
 
 // Server Port
 const PORT = process.env.PORT || 5000;
