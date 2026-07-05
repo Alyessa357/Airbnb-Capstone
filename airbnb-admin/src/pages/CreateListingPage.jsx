@@ -7,6 +7,7 @@ import listingService from "../services/listingService";
 
 import "../styles/createListingPage.css";
 
+// Property type options for the listing form dropdown
 const TYPE_OPTIONS = [
     "Entire home",
     "Private room",
@@ -15,11 +16,13 @@ const TYPE_OPTIONS = [
     "Entire Apartment",
 ];
 
+// Form page for creating a new listing via the admin API
 const CreateListingPage = () => {
     const { token } = useAuth();
     const navigate = useNavigate();
     const fileInputRef = useRef(null);
 
+    // Form field state — basic listing details
     const [title, setTitle] = useState("");
     const [location, setLocation] = useState("");
     const [description, setDescription] = useState("");
@@ -38,10 +41,12 @@ const CreateListingPage = () => {
 
     const [imageUrl, setImageUrl] = useState("");
 
+    // UI feedback state
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
     const [loading, setLoading] = useState(false);
 
+    // Add amenity to the list if not empty and not a duplicate
     const handleAddAmenity = () => {
         const value = amenityInput.trim();
         if (!value || amenities.includes(value)) return;
@@ -50,12 +55,14 @@ const CreateListingPage = () => {
         setAmenityInput("");
     };
 
+    // Remove a single amenity tag by name
     const handleRemoveAmenity = (amenity) => {
         setAmenities((current) =>
             current.filter((item) => item !== amenity)
         );
     };
 
+    // Add image URL to the preview list
     const handleAddImage = () => {
 
         const value = imageUrl.trim();
@@ -72,6 +79,7 @@ const CreateListingPage = () => {
         setImageUrl("");
     };
 
+    // Validate, submit to API, then reset form on success
     const handleSubmit = async (event) => {
         event.preventDefault();
         setError("");
@@ -120,6 +128,7 @@ const CreateListingPage = () => {
 
             setSuccess("Listing created successfully");
 
+            // Reset all fields to defaults after successful creation
             setTitle("");
             setLocation("");
             setDescription("");
@@ -163,6 +172,7 @@ const CreateListingPage = () => {
 
                 <form onSubmit={handleSubmit}>
                     <div className="create-listing__grid">
+                        {/* Left column — name, location, description */}
                         <div className="create-listing__column">
 
                             <div className="create-listing__field">
@@ -207,6 +217,7 @@ const CreateListingPage = () => {
                             </div>
                         </div>
 
+                        {/* Right column — rooms, guests, price, fees, amenities */}
                         <div className="create-listing__column">
                             <div className="create-listing__field">
                                 <label>Rooms, Baths, &amp; Type</label>
@@ -279,6 +290,7 @@ const CreateListingPage = () => {
                                 />
                             </div>
 
+                            {/* Weekly discount, cleaning, service, and occupancy tax fields */}
                             <div className="create-listing__field">
                                 <label>Fees &amp; Discounts</label>
                                 <div className="create-listing__fees-grid">
@@ -345,6 +357,7 @@ const CreateListingPage = () => {
                                 </div>
                             </div>
 
+                            {/* Amenity input with add button and removable tags */}
                             <div className="create-listing__field">
                                 <label htmlFor="listing-amenity">
                                     Amenities
@@ -400,6 +413,7 @@ const CreateListingPage = () => {
                         </div>
                     </div>
 
+                    {/* Image URL input and preview grid */}
                     <div className="create-listing__field create-listing__images-section">
                         <label>Images</label>
 
@@ -444,6 +458,7 @@ const CreateListingPage = () => {
                         </div>
                     </div>
 
+                    {/* Submit and cancel buttons */}
                     <div className="create-listing__actions">
                         <button
                             type="submit"

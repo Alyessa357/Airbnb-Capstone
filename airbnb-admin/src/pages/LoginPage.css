@@ -1,3 +1,4 @@
+/* Full-page login/register layout */
 .login-page {
     min-height: 100vh;
     background-color: #ffffff;
@@ -5,6 +6,7 @@
     position: relative;
 }
 
+/* Airbnb logo pinned to the top-left corner */
 .login-page__logo {
     position: absolute;
     top: 32px;
@@ -22,6 +24,7 @@
     text-decoration: none;
 }
 
+/* Centered content area — title and form vertically centered */
 .login-page__content {
     min-height: 100vh;
 
@@ -33,6 +36,7 @@
     padding: 100px 24px 48px;
 }
 
+/* Page heading ("Log in" or "Sign up") */
 .login-page__title {
     margin: 0 0 40px;
 
@@ -42,6 +46,7 @@
     text-align: center;
 }
 
+/* Form container — max-width centered column */
 .login-page__form {
     width: 100%;
     max-width: 400px;
@@ -51,11 +56,13 @@
     align-items: center;
 }
 
+/* Single input field wrapper — label and input stacked */
 .login-field {
     width: 100%;
     margin-bottom: 24px;
 }
 
+/* Uppercase blue label above each input */
 .login-field label {
     display: block;
     margin-bottom: 8px;
@@ -67,6 +74,7 @@
     letter-spacing: 0.02em;
 }
 
+/* Text input with dark border */
 .login-field input {
     width: 100%;
     box-sizing: border-box;
@@ -83,10 +91,12 @@
     outline: none;
 }
 
+/* Blue border highlight on focus */
 .login-field input:focus {
     border-color: #1a73e8;
 }
 
+/* "Forgot password?" link below the form fields */
 .login-page__forgot {
     margin: 0 0 32px;
 
@@ -104,6 +114,7 @@
     text-decoration: underline;
 }
 
+/* Full-width blue submit button */
 .login-page__submit {
     width: 100%;
 
@@ -123,15 +134,18 @@
     transition: background-color 0.2s ease;
 }
 
+/* Darker blue on hover when not disabled */
 .login-page__submit:hover:not(:disabled) {
     background-color: #1558b0;
 }
 
+/* Dimmed and non-clickable while request is in flight */
 .login-page__submit:disabled {
     opacity: 0.7;
     cursor: not-allowed;
 }
 
+/* Error message shown above the form */
 .login-page__error {
     width: 100%;
     max-width: 400px;
@@ -142,12 +156,14 @@
     text-align: center;
 }
 
+/* Log in / Sign up tab toggle row */
 .login-page__toggle {
     display: flex;
     gap: 24px;
     margin-bottom: 32px;
 }
 
+/* Individual tab button with underline on hover/active */
 .login-page__toggle-btn {
     border: none;
     background: transparent;
@@ -170,6 +186,7 @@
     border-bottom-color: #1a73e8;
 }
 
+/* Active tab — dark text with bottom border */
 .login-page__toggle-btn--active {
     color: #222222;
     font-weight: 600;
@@ -181,6 +198,7 @@
     border-bottom-color: #222222;
 }
 
+/* "Don't have an account? Sign up" text below the form */
 .login-page__switch {
     margin: 24px 0 0;
 
@@ -189,6 +207,7 @@
     text-align: center;
 }
 
+/* Underlined link inside the switch text */
 .login-page__switch button {
     border: none;
     background: none;

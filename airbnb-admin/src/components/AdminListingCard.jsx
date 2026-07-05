@@ -2,6 +2,7 @@ import { FaStar } from "react-icons/fa";
 
 import "../styles/AdminListingCard.css";
 
+// Clickable listing card for the admin listings page — view, update, delete actions
 const AdminListingCard = ({ listing, onView, onUpdate, onDelete }) => {
     const rating = listing.rating || 4.8;
     const reviewCount = listing.reviews || 0;
@@ -19,6 +20,7 @@ const AdminListingCard = ({ listing, onView, onUpdate, onDelete }) => {
                 }
             }}
         >
+            {/* Left column — image and action buttons */}
             <div className="admin-listing-card__left">
                 <img
                     className="admin-listing-card__image"
@@ -29,6 +31,7 @@ const AdminListingCard = ({ listing, onView, onUpdate, onDelete }) => {
                     alt={listing.title}
                 />
 
+                {/* stopPropagation prevents the card's onView click from firing */}
                 <button
                     type="button"
                     className="admin-listing-card__update-btn"
@@ -52,6 +55,7 @@ const AdminListingCard = ({ listing, onView, onUpdate, onDelete }) => {
                 </button>
             </div>
 
+            {/* Middle column — type, title, specs, amenities, and rating */}
             <div className="admin-listing-card__details">
                 <p className="admin-listing-card__category">
                     {listing.type} in {listing.location}
@@ -85,6 +89,7 @@ const AdminListingCard = ({ listing, onView, onUpdate, onDelete }) => {
                 </div>
             </div>
 
+            {/* Right column — nightly price */}
             <div className="admin-listing-card__price">
                 <span>${listing.price}</span> / night
             </div>
@@ -93,4 +98,3 @@ const AdminListingCard = ({ listing, onView, onUpdate, onDelete }) => {
 };
 
 export default AdminListingCard;
-

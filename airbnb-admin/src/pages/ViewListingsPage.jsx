@@ -8,6 +8,7 @@ import useAuth from "../context/useAuth";
 
 import "../styles/viewListingsPage.css";
 
+// Admin page displaying all listings with view, update, and delete actions
 const ViewListingsPage = () => {
     const { token } = useAuth();
     const navigate = useNavigate();
@@ -16,6 +17,7 @@ const ViewListingsPage = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
 
+    // Load listings when the page mounts
     useEffect(() => {
         fetchListings();
     }, [token]);
@@ -31,6 +33,7 @@ const ViewListingsPage = () => {
         }
     };
 
+    // Delete a listing after confirmation, then remove from local state
     const handleDelete = async (listingId) => {
         if (!window.confirm("Delete this listing?")) return;
 
@@ -44,10 +47,12 @@ const ViewListingsPage = () => {
         }
     };
 
+    // Navigate to the full room details page
     const handleView = (listingId) => {
         navigate(`/rooms/${listingId}`);
     };
 
+    // Navigate to the update listing form
     const handleUpdate = (listingId) => {
         navigate(`/update-listing/${listingId}`);
     };
@@ -71,6 +76,7 @@ const ViewListingsPage = () => {
                     </p>
                 )}
 
+                {/* Listing cards — or empty state if none exist */}
                 {!error && listings.length === 0 ? (
                     <p className="view-listings__message">
                         No listings found.

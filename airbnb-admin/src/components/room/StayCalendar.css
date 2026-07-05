@@ -1,9 +1,11 @@
+/* Stay calendar section — top and bottom dividers */
 .stay-calendar {
     padding: 48px 0;
     border-top: 1px solid #dddddd;
     border-bottom: 1px solid #dddddd;
 }
 
+/* Section heading ("Select dates") */
 .stay-calendar h2 {
     margin: 0 0 8px;
     font-size: 22px;
@@ -11,6 +13,7 @@
     color: #222222;
 }
 
+/* Minimum nights requirement subtitle */
 .stay-calendar__subtitle {
     margin: 0 0 24px;
     font-size: 16px;
@@ -18,12 +21,14 @@
     text-decoration: underline;
 }
 
+/* Month navigation row — previous/next arrows */
 .stay-calendar__controls {
     display: flex;
     justify-content: space-between;
     margin-bottom: 8px;
 }
 
+/* Arrow buttons to change the visible months */
 .stay-calendar__controls button {
     border: none;
     background: transparent;
@@ -32,12 +37,14 @@
     cursor: pointer;
 }
 
+/* Side-by-side layout for two month calendars */
 .stay-calendar__months {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 48px;
 }
 
+/* Month name heading (e.g. "July 2026") */
 .stay-calendar__month h3 {
     margin: 0 0 16px;
     text-align: center;
@@ -46,6 +53,7 @@
     color: #222222;
 }
 
+/* Seven-column grid shared by weekday labels and day cells */
 .stay-calendar__weekdays,
 .stay-calendar__days {
     display: grid;
@@ -53,6 +61,7 @@
     gap: 2px;
 }
 
+/* Day-of-week labels (Su, Mo, Tu, etc.) */
 .stay-calendar__weekdays span {
     text-align: center;
     font-size: 12px;
@@ -61,6 +70,7 @@
     padding-bottom: 8px;
 }
 
+/* Individual day number cell */
 .stay-calendar__day {
     display: flex;
     align-items: center;
@@ -70,20 +80,24 @@
     color: #222222;
 }
 
+/* Placeholder cell for days before the 1st of the month */
 .stay-calendar__day--empty {
     visibility: hidden;
 }
 
+/* Days between check-in and check-out — light gray background */
 .stay-calendar__day--in-range {
     background: #f7f7f7;
 }
 
+/* Check-in and check-out dates — dark circle highlight */
 .stay-calendar__day--edge {
     background: #222222;
     color: #ffffff;
     border-radius: 50%;
 }
 
+/* Footer row — keyboard shortcut icon and clear dates link */
 .stay-calendar__footer {
     display: flex;
     align-items: center;
@@ -91,6 +105,7 @@
     margin-top: 24px;
 }
 
+/* Keyboard icon button */
 .stay-calendar__keyboard {
     border: none;
     background: transparent;
@@ -99,6 +114,7 @@
     cursor: pointer;
 }
 
+/* "Clear dates" underlined link */
 .stay-calendar__clear {
     border: none;
     background: transparent;
@@ -109,6 +125,7 @@
     cursor: pointer;
 }
 
+/* Stack the two month calendars vertically on small screens */
 @media (max-width: 900px) {
     .stay-calendar__months {
         grid-template-columns: 1fr;

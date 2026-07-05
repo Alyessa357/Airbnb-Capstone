@@ -9,12 +9,15 @@ import useAuth from "../context/useAuth";
 
 import "../styles/dashboardPage.css";
 
+// Normalize check-in field name across reservation formats
 const getCheckIn = (reservation) =>
     reservation.checkInDate || reservation.checkIn;
 
+// Normalize check-out field name across reservation formats
 const getCheckOut = (reservation) =>
     reservation.checkOutDate || reservation.checkOut;
 
+// Compute reservation totals — count, upcoming, active stays, and revenue
 const getReservationStats = (reservations) => {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
@@ -53,6 +56,7 @@ const getReservationStats = (reservations) => {
     };
 };
 
+// Admin home page — reservation stats and listing management
 const DashboardPage = () => {
     const { token } = useAuth();
     const navigate = useNavigate();
@@ -62,10 +66,12 @@ const DashboardPage = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
 
+    // Load listings and reservations when the page mounts
     useEffect(() => {
         fetchDashboardData();
     }, [token]);
 
+    // Fetch both listings and reservations in parallel
     const fetchDashboardData = async () => {
         try {
             const [listingsData, reservationsData] = await Promise.all([
@@ -82,6 +88,7 @@ const DashboardPage = () => {
         }
     };
 
+    // Delete a listing after confirmation, then remove it from local state
     const handleDelete = async (listingId) => {
         if (!window.confirm("Delete this listing?")) return;
 
@@ -95,6 +102,7 @@ const DashboardPage = () => {
         }
     };
 
+    // Navigate to the update listing form
     const handleUpdate = (listingId) => {
         navigate(`/update-listing/${listingId}`);
     };
@@ -122,6 +130,7 @@ const DashboardPage = () => {
 
                 {!error && (
                     <>
+                        {/* Summary stat cards — reservations and revenue */}
                         <section className="dashboard__stats">
                             <article className="dashboard__stat-card">
                                 <p className="dashboard__stat-label">
@@ -166,6 +175,7 @@ const DashboardPage = () => {
                             </h2>
                         </div>
 
+                        {/* Listing cards with update and delete actions */}
                         {listings.length === 0 ? (
                             <p className="dashboard__message">
                                 No listings found.

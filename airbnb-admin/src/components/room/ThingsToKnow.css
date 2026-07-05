@@ -1,8 +1,10 @@
+/* Things to know section — padded block with bottom divider */
 .things-to-know {
     padding: 48px 0;
     border-bottom: 1px solid #dddddd;
 }
 
+/* Section heading */
 .things-to-know h2 {
     margin: 0 0 24px;
     font-size: 22px;
@@ -10,12 +12,14 @@
     color: #222222;
 }
 
+/* Three-column grid — house rules, safety, cancellation */
 .things-to-know__grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 32px;
 }
 
+/* Column heading (e.g. "House rules", "Safety & property") */
 .things-to-know h3 {
     margin: 0 0 16px;
     font-size: 16px;
@@ -23,12 +27,14 @@
     color: #222222;
 }
 
+/* Reset default list styling */
 .things-to-know ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
+/* List items and standalone paragraphs — icon/text row layout */
 .things-to-know li,
 .things-to-know p {
     display: flex;
@@ -40,11 +46,13 @@
     color: #222222;
 }
 
+/* Icons in list items — won't shrink in flex row */
 .things-to-know li svg {
     margin-top: 3px;
     flex-shrink: 0;
 }
 
+/* Inline "Show more" link inside a list item */
 .things-to-know li button {
     border: none;
     background: none;
@@ -56,6 +64,7 @@
     cursor: pointer;
 }
 
+/* Standalone underlined link at the bottom of a column */
 .things-to-know__link {
     border: none;
     background: none;
@@ -67,6 +76,7 @@
     cursor: pointer;
 }
 
+/* Stack columns vertically on small screens */
 @media (max-width: 900px) {
     .things-to-know__grid {
         grid-template-columns: 1fr;

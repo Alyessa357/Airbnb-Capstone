@@ -1,8 +1,10 @@
+/* Listing overview section — bottom border separates it from content below */
 .listing-overview {
     padding-bottom: 24px;
     border-bottom: 1px solid #dddddd;
 }
 
+/* Top row — listing title/details on the left, host avatar on the right */
 .listing-overview__host-row {
     display: flex;
     align-items: center;
@@ -12,6 +14,7 @@
     border-bottom: 1px solid #dddddd;
 }
 
+/* Listing title (e.g. property type and location) */
 .listing-overview__host-row h2 {
     margin: 0 0 8px;
     font-size: 22px;
@@ -19,12 +22,14 @@
     color: #222222;
 }
 
+/* Guest/bedroom/bed count summary line */
 .listing-overview__host-row p {
     margin: 0;
     font-size: 16px;
     color: #222222;
 }
 
+/* Small circular host avatar in the top-right */
 .listing-overview__avatar {
     width: 56px;
     height: 56px;
@@ -32,27 +37,32 @@
     object-fit: cover;
 }
 
+/* Highlight items block — self check-in, location, cancellation */
 .listing-overview__highlights {
     padding: 24px 0;
     border-bottom: 1px solid #dddddd;
 }
 
+/* Single highlight row — icon on the left, text on the right */
 .listing-overview__highlight {
     display: flex;
     gap: 16px;
     margin-bottom: 24px;
 }
 
+/* Remove bottom margin from the last highlight item */
 .listing-overview__highlight:last-child {
     margin-bottom: 0;
 }
 
+/* Highlight icon (door, map pin, calendar) */
 .listing-overview__icon {
     font-size: 24px;
     color: #222222;
     margin-top: 2px;
 }
 
+/* Bold highlight heading */
 .listing-overview__highlight-title {
     margin: 0 0 4px;
     font-size: 16px;
@@ -60,6 +70,7 @@
     color: #222222;
 }
 
+/* Muted highlight description text */
 .listing-overview__highlight-text {
     margin: 0;
     font-size: 14px;
@@ -67,6 +78,7 @@
     line-height: 1.5;
 }
 
+/* Inline "Show more" link inside highlight text */
 .listing-overview__highlight-text button {
     border: none;
     background: none;
@@ -78,10 +90,12 @@
     cursor: pointer;
 }
 
+/* Listing description block below the highlights */
 .listing-overview__description {
     padding-top: 24px;
 }
 
+/* Description paragraph — preserves line breaks from the source text */
 .listing-overview__description p {
     margin: 0;
     font-size: 16px;
@@ -90,6 +104,7 @@
     white-space: pre-line;
 }
 
+/* Collapsed state — limits description to three lines */
 .listing-overview__description--clamped {
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -97,6 +112,7 @@
     overflow: hidden;
 }
 
+/* "Show more" / "Show less" toggle below the description */
 .listing-overview__show-more {
     margin-top: 16px;
     border: none;

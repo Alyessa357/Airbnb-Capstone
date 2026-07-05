@@ -1,8 +1,10 @@
+/* Reviews section — padded block with bottom divider */
 .reviews {
     padding: 0 0 80px 0;
     border-bottom: 1px solid #dddddd;
 }
 
+/* Overall rating heading with star icon (e.g. "4.91 · 7 reviews") */
 .reviews__heading {
     display: flex;
     align-items: center;
@@ -13,11 +15,13 @@
     color: #222222;
 }
 
+/* Pink star icon in the heading */
 .reviews__star {
     color: #ff385c;
     font-size: 16px;
 }
 
+/* Two-column grid of category rating bars (cleanliness, accuracy, etc.) */
 .reviews__categories {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -27,6 +31,7 @@
     margin: 0 0 72px;
 }
 
+/* Single category row — label, progress bar, and score */
 .reviews__category {
     display: grid;
     grid-template-columns: 130px minmax(0, 1fr) 36px;
@@ -34,11 +39,13 @@
     align-items: center;
 }
 
+/* Category name (e.g. "Cleanliness") */
 .reviews__category-label {
     font-size: 16px;
     color: #222222;
 }
 
+/* Numeric score aligned to the right (e.g. "4.9") */
 .reviews__category-score {
     font-size: 16px;
     font-weight: 400;
@@ -46,6 +53,7 @@
     text-align: right;
 }
 
+/* Gray track behind the filled rating bar */
 .reviews__bar {
     width: 200px;
     flex-shrink: 0;
@@ -56,6 +64,7 @@
     margin-left: 180px;
 }
 
+/* Dark fill inside the bar — width set inline to match the score */
 .reviews__bar span {
     display: block;
     height: 100%;
@@ -63,6 +72,7 @@
     border-radius: 2px;
 }
 
+/* Two-column grid of individual review cards */
 .reviews__grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -71,6 +81,7 @@
     margin-bottom: 48px;
 }
 
+/* Reviewer avatar, name, and date row */
 .review__header {
     display: flex;
     align-items: center;
@@ -78,6 +89,7 @@
     margin-bottom: 16px;
 }
 
+/* Circular reviewer profile photo */
 .review__header img {
     width: 48px;
     height: 48px;
@@ -85,6 +97,7 @@
     object-fit: cover;
 }
 
+/* Reviewer name */
 .review__header h3 {
     margin: 0;
     font-size: 16px;
@@ -92,12 +105,14 @@
     color: #222222;
 }
 
+/* Review date (e.g. "March 2024") */
 .review__header p {
     margin: 0;
     font-size: 14px;
     color: #717171;
 }
 
+/* Review comment text */
 .review__comment {
     margin: 0;
     font-size: 16px;
@@ -105,6 +120,7 @@
     color: #222222;
 }
 
+/* Collapsed state — limits comment to three lines */
 .review__comment--clamped {
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -112,6 +128,7 @@
     overflow: hidden;
 }
 
+/* "Show more" link below a truncated review */
 .review__show-more {
     margin-top: 8px;
     border: none;
@@ -124,6 +141,7 @@
     cursor: pointer;
 }
 
+/* Outlined "Show all reviews" button below the grid */
 .reviews__show-all {
     padding: 13px 23px;
     border: 1px solid #222222;
@@ -135,6 +153,10 @@
     cursor: pointer;
 }
 
+
+/* Responsive design */
+
+/* Reduce column gap on medium-wide screens */
 @media (max-width: 1100px) {
     .reviews__categories,
     .reviews__grid {
@@ -142,6 +164,7 @@
     }
 }
 
+/* Stack to single column and tighten spacing on small screens */
 @media (max-width: 900px) {
     .reviews {
         padding: 48px 0;

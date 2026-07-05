@@ -1,8 +1,10 @@
+/* Form page container — centered with max width */
 .create-listing {
     max-width: 960px;
     margin: 0 auto;
 }
 
+/* Page heading ("Create Listing" or "Update Listing") */
 .create-listing__title {
     margin: 0 0 40px;
 
@@ -12,6 +14,7 @@
     text-align: center;
 }
 
+/* Success or error feedback message */
 .create-listing__message {
     margin: 0 0 24px;
     text-align: center;
@@ -26,16 +29,19 @@
     color: #1a73e8;
 }
 
+/* Two-column form layout */
 .create-listing__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 32px 40px;
 }
 
+/* Spacing wrapper for each form field group */
 .create-listing__field {
     margin-bottom: 24px;
 }
 
+/* Uppercase blue label above inputs */
 .create-listing__field label {
     display: block;
     margin-bottom: 8px;
@@ -47,6 +53,7 @@
     letter-spacing: 0.02em;
 }
 
+/* Shared input, select, and textarea styling */
 .create-listing__field input,
 .create-listing__field select,
 .create-listing__field textarea {
@@ -67,29 +74,34 @@
     outline: none;
 }
 
+/* Taller resizable textarea for description */
 .create-listing__field textarea {
     min-height: 160px;
     resize: vertical;
 }
 
+/* Blue border highlight on focus */
 .create-listing__field input:focus,
 .create-listing__field select:focus,
 .create-listing__field textarea:focus {
     border-color: #1a73e8;
 }
 
+/* Three-column row — rooms, baths, and type side by side */
 .create-listing__row {
     display: grid;
     grid-template-columns: 1fr 1fr 1.4fr;
     gap: 12px;
 }
 
+/* Two-column grid for fee and discount inputs */
 .create-listing__fees-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px 16px;
 }
 
+/* Labels inside the fees grid */
 .create-listing__fees-grid label {
     display: block;
     margin-bottom: 8px;
@@ -100,6 +112,7 @@
     letter-spacing: 0.02em;
 }
 
+/* Inputs inside the fees grid */
 .create-listing__fees-grid input {
     width: 100%;
     box-sizing: border-box;
@@ -117,6 +130,7 @@
     border-color: #1a73e8;
 }
 
+/* Inputs and select inside the rooms/baths/type row */
 .create-listing__row input,
 .create-listing__row select {
     width: 100%;
@@ -141,6 +155,7 @@
     text-transform: uppercase;
 }
 
+/* Amenity input and Add button side by side */
 .create-listing__amenities {
     display: flex;
     gap: 12px;
@@ -155,6 +170,7 @@
     font-size: 15px;
 }
 
+/* Blue Add button for amenities and images */
 .create-listing__add-btn {
     padding: 12px 20px;
 
@@ -174,6 +190,7 @@
     background: #1558b0;
 }
 
+/* Row of added amenity pill tags */
 .create-listing__amenity-tags {
     display: flex;
     flex-wrap: wrap;
@@ -181,6 +198,7 @@
     margin-top: 12px;
 }
 
+/* Single amenity pill with remove button */
 .create-listing__amenity-tag {
     display: inline-flex;
     align-items: center;
@@ -195,6 +213,7 @@
     color: #222222;
 }
 
+/* × remove button inside amenity pill */
 .create-listing__amenity-tag button {
     border: none;
     background: none;
@@ -204,10 +223,12 @@
     line-height: 1;
 }
 
+/* Images section spacing */
 .create-listing__images-section {
     margin-bottom: 10px;
 }
 
+/* Add Image button below the URL input */
 .create-listing__upload-btn {
     display: block;
     margin: 0 auto 16px;
@@ -229,6 +250,7 @@
     background: #1558b0;
 }
 
+/* Bordered preview area for uploaded image thumbnails */
 .create-listing__image-preview {
     min-height: 200px;
     padding: 16px;
@@ -242,6 +264,7 @@
     align-content: flex-start;
 }
 
+/* Individual preview thumbnail */
 .create-listing__image-preview img {
     width: 140px;
     height: 100px;
@@ -249,6 +272,7 @@
     border-radius: 6px;
 }
 
+/* Placeholder text when no images have been added */
 .create-listing__image-placeholder {
     width: 100%;
     text-align: center;
@@ -257,6 +281,7 @@
     padding: 72px 0;
 }
 
+/* Red Remove button below each preview image */
 .create-listing__image-preview button {
     padding: 6px 12px;
     margin: 10px;
@@ -273,6 +298,7 @@
     background: #e31c5f;
 }
 
+/* Submit and Cancel buttons row */
 .create-listing__actions {
     display: flex;
     justify-content: center;
@@ -280,6 +306,7 @@
     margin-top: 40px;
 }
 
+/* Blue Create/Update submit button */
 .create-listing__submit {
     min-width: 160px;
     padding: 14px 32px;
@@ -304,6 +331,7 @@
     cursor: not-allowed;
 }
 
+/* Red Cancel button */
 .create-listing__cancel {
     min-width: 160px;
     padding: 14px 32px;
@@ -326,6 +354,7 @@
 
 /* Responsive design */
 
+/* Single-column form on tablet and below */
 @media (max-width: 768px) {
     .create-listing__grid {
         grid-template-columns: 1fr;
@@ -340,6 +369,7 @@
     }
 }
 
+/* Fluid sizing and stacked layout on small phones */
 @media (max-width: 360px) {
     .create-listing {
         max-width: 100%;
@@ -494,6 +524,7 @@
     }
 }
 
+/* Tighter sizing on very narrow screens */
 @media (max-width: 280px) {
     .create-listing__title {
         font-size: 16px;
@@ -528,6 +559,7 @@
     }
 }
 
+/* Minimum sizing for extremely narrow viewports */
 @media (max-width: 200px) {
     .create-listing__title {
         font-size: 14px;

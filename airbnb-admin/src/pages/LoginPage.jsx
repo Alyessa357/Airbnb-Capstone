@@ -7,6 +7,7 @@ import authService from "../services/authService";
 
 import "./LoginPage.css";
 
+// Login and sign-up page — toggled via ?mode=signup URL param
 const LoginPage = () => {
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
@@ -20,10 +21,12 @@ const LoginPage = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
+    // Clear error when switching between login and sign up
     useEffect(() => {
         setError("");
     }, [isSignUp]);
 
+    // Toggle between login and sign-up modes via URL search params
     const switchMode = (signUp) => {
         setError("");
         if (signUp) {
@@ -33,6 +36,7 @@ const LoginPage = () => {
         }
     };
 
+    // Authenticate existing user and redirect to dashboard
     const handleLogin = async (event) => {
         event.preventDefault();
         setError("");
@@ -59,6 +63,7 @@ const LoginPage = () => {
         }
     };
 
+    // Register new admin user, then log in and redirect to dashboard
     const handleSignUp = async (event) => {
         event.preventDefault();
         setError("");
@@ -97,6 +102,7 @@ const LoginPage = () => {
 
     return (
         <div className="login-page">
+            {/* Logo — redirects to the client frontend */}
             <Link
                 to="/"
                 className="login-page__logo"
@@ -116,6 +122,7 @@ const LoginPage = () => {
                     {isSignUp ? "Sign up" : "Login"}
                 </h1>
 
+                {/* Tab toggle between Login and Sign up */}
                 <div className="login-page__toggle">
                     <button
                         type="button"
@@ -146,6 +153,7 @@ const LoginPage = () => {
                 )}
 
                 {isSignUp ? (
+                    // Sign-up form — username, email, password
                     <form
                         className="login-page__form"
                         onSubmit={handleSignUp}
@@ -209,6 +217,7 @@ const LoginPage = () => {
                         </p>
                     </form>
                 ) : (
+                    // Login form — email and password
                     <form
                         className="login-page__form"
                         onSubmit={handleLogin}

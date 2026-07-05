@@ -2,6 +2,7 @@ import { FaFacebookF, FaGlobe, FaInstagram, FaTwitter } from "react-icons/fa";
 
 import "../styles/adminFooter.css";
 
+// Footer link columns — Support, Community, Hosting, About
 const FOOTER_SECTIONS = [
     {
         title: "Support",
@@ -46,9 +47,11 @@ const FOOTER_SECTIONS = [
     },
 ];
 
+// Site-wide footer with link columns, copyright, and social icons
 const AdminFooter = () => {
     return (
         <footer className="admin-footer">
+            {/* Four-column link grid */}
             <div className="admin-footer__grid">
                 {FOOTER_SECTIONS.map((section) => (
                     <div key={section.title}>
@@ -60,6 +63,7 @@ const AdminFooter = () => {
                 ))}
             </div>
 
+            {/* Bottom bar — copyright/legal links on the left, locale and social on the right */}
             <div className="admin-footer__copyright">
                 <div className="admin-footer__copyright-left">
                     <span>© 2022 Airbnb, Inc.</span>

@@ -4,11 +4,13 @@ import useAuth from "../../context/useAuth";
 
 import "./ReservationCard.css";
 
+// Formats an ISO date string (YYYY-MM-DD) for display in the UI
 const formatDisplayDate = (dateValue) => {
     if (!dateValue) return "";
     return new Date(`${dateValue}T00:00:00`).toLocaleDateString("en-US");
 };
 
+// Booking sidebar card — dates, guests, pricing, and reserve action
 const ReservationCard = ({
     listing,
     checkIn,
@@ -24,6 +26,7 @@ const ReservationCard = ({
 }) => {
     const { token } = useAuth();
 
+    // Number of nights between check-in and check-out
     const nights =
         checkIn && checkOut
             ? Math.max(
@@ -33,6 +36,7 @@ const ReservationCard = ({
               )
             : 0;
 
+    // Price breakdown — rates and fees from listing with sensible defaults
     const nightlyRate = listing.price || 0;
     const subtotal = nights * nightlyRate;
     const weeklyDiscount =
@@ -46,6 +50,7 @@ const ReservationCard = ({
     const rating = listing.rating || 5.0;
     const reviewCount = listing.reviews || 7;
 
+    // Blocks reserve if auth is required and user is not logged in
     const handleReserve = () => {
         if (requireAuth && !token) {
             alert("Please log in to make a reservation.");
@@ -57,6 +62,7 @@ const ReservationCard = ({
 
     return (
         <div className="reservation-card">
+            {/* Price and star rating header */}
             <div className="reservation-card__header">
                 <p className="reservation-card__price">
                     <span>${nightlyRate}</span> / night
@@ -71,6 +77,7 @@ const ReservationCard = ({
                 </div>
             </div>
 
+            {/* Check-in, check-out, and guest count inputs */}
             <div className="reservation-card__fields">
                 <div className="reservation-card__field">
                     <label htmlFor="check-in">CHECK-IN</label>
@@ -106,6 +113,7 @@ const ReservationCard = ({
                             onGuestCountChange(Number(event.target.value))
                         }
                     >
+                        {/* Options from 1 up to the listing's max guest capacity */}
                         {Array.from(
                             { length: listing.guests || 8 },
                             (_, index) => index + 1
@@ -118,6 +126,7 @@ const ReservationCard = ({
                 </div>
             </div>
 
+            {/* Primary reserve button — disabled while request is in flight */}
             <button
                 type="button"
                 className="reservation-card__reserve"
@@ -127,12 +136,14 @@ const ReservationCard = ({
                 {loading ? "Reserving..." : reserveLabel}
             </button>
 
+            {/* Shown only when login is required before booking */}
             {requireAuth && (
                 <p className="reservation-card__note">
                     You won&apos;t be charged yet
                 </p>
             )}
 
+            {/* Itemized price breakdown — only visible once dates are selected */}
             {nights > 0 && (
                 <div className="reservation-card__breakdown">
                     <div className="reservation-card__line">
@@ -172,6 +183,7 @@ const ReservationCard = ({
                 </div>
             )}
 
+            {/* Human-readable summary of selected dates */}
             {(checkIn || checkOut) && (
                 <p className="reservation-card__selected-dates">
                     {formatDisplayDate(checkIn)} – {formatDisplayDate(checkOut)}

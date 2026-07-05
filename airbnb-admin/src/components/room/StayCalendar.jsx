@@ -2,6 +2,7 @@ import { FaChevronLeft, FaChevronRight, FaKeyboard } from "react-icons/fa";
 
 import "./StayCalendar.css";
 
+// Full month names for calendar headings
 const MONTH_NAMES = [
     "January",
     "February",
@@ -17,8 +18,10 @@ const MONTH_NAMES = [
     "December",
 ];
 
+// Abbreviated weekday labels for the calendar header row
 const DAY_LABELS = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
 
+// Builds an array of day numbers for a month, with nulls padding the start
 const buildMonthDays = (year, month) => {
     const firstDay = new Date(year, month, 1).getDay();
     const daysInMonth = new Date(year, month + 1, 0).getDate();
@@ -35,6 +38,7 @@ const buildMonthDays = (year, month) => {
     return days;
 };
 
+// Returns the section title and subtitle based on selected dates
 const formatRangeLabel = (checkIn, checkOut, nights, location) => {
     if (!checkIn || !checkOut) {
         return {
@@ -60,6 +64,7 @@ const formatRangeLabel = (checkIn, checkOut, nights, location) => {
     };
 };
 
+// True if a day falls between check-in and check-out (inclusive)
 const isInRange = (year, month, day, checkIn, checkOut) => {
     if (!checkIn || !checkOut || !day) return false;
 
@@ -70,6 +75,7 @@ const isInRange = (year, month, day, checkIn, checkOut) => {
     return current >= start && current <= end;
 };
 
+// True if a day is the check-in or check-out date
 const isRangeEdge = (year, month, day, checkIn, checkOut) => {
     if (!day) return false;
 
@@ -84,6 +90,7 @@ const isRangeEdge = (year, month, day, checkIn, checkOut) => {
     return current === start || current === end;
 };
 
+// Two-month calendar showing the selected date range
 const StayCalendar = ({
     location,
     checkIn,
@@ -91,6 +98,7 @@ const StayCalendar = ({
     nights,
     onClearDates,
 }) => {
+    // First visible month — based on check-in or defaults to Feb 2022
     const startMonth = checkIn ? new Date(`${checkIn}T00:00:00`) : new Date(2022, 1, 1);
     const monthOne = startMonth.getMonth();
     const yearOne = startMonth.getFullYear();
@@ -99,6 +107,7 @@ const StayCalendar = ({
 
     const labels = formatRangeLabel(checkIn, checkOut, nights, location);
 
+    // Renders one month grid with weekday labels and highlighted date range
     const renderMonth = (year, month) => (
         <div key={`${year}-${month}`} className="stay-calendar__month">
             <h3>
@@ -141,6 +150,7 @@ const StayCalendar = ({
             <h2>{labels.title}</h2>
             <p className="stay-calendar__subtitle">{labels.subtitle}</p>
 
+            {/* Previous/next month navigation */}
             <div className="stay-calendar__controls">
                 <button type="button" aria-label="Previous month">
                     <FaChevronLeft />

@@ -1,3 +1,4 @@
+/* Top navigation bar — logo on left, user actions on right */
 .header {
     height: 70px;
     background-color: white;
@@ -8,6 +9,7 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
+/* Airbnb logo text — pink brand color, clickable */
 .logo {
     font-size: 24px;
     font-weight: bold;
@@ -15,12 +17,14 @@
     cursor: pointer;
 }
 
+/* Right side — user info and action buttons grouped together */
 .user-section {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
+/* Pink action buttons in the user section (e.g. Logout) */
 .user-section button {
     background-color: #ff385c;
     color: white;
@@ -29,4 +33,3 @@
     border-radius: 8px;
     cursor: pointer;
 }
-

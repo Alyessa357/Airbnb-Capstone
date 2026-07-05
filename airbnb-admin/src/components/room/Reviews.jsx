@@ -3,6 +3,7 @@ import { FaStar } from "react-icons/fa";
 
 import "./Reviews.css";
 
+// Sub-ratings shown as labeled progress bars
 const RATING_CATEGORIES = [
     { label: "Cleanliness", score: 5.0 },
     { label: "Communication", score: 5.0 },
@@ -12,6 +13,7 @@ const RATING_CATEGORIES = [
     { label: "Value", score: 4.7 },
 ];
 
+// Static review data — avatar, date, comment, and optional showMore flag
 const REVIEWS = [
     {
         id: 1,
@@ -63,6 +65,7 @@ const REVIEWS = [
     },
 ];
 
+// Single review card with optional expand for long comments
 const ReviewCard = ({ review }) => {
     const [expanded, setExpanded] = useState(false);
 
@@ -76,6 +79,7 @@ const ReviewCard = ({ review }) => {
                 </div>
             </div>
 
+            {/* Clamp to 3 lines when showMore is set and not yet expanded */}
             <p
                 className={`review__comment${
                     review.showMore && !expanded
@@ -99,6 +103,7 @@ const ReviewCard = ({ review }) => {
     );
 };
 
+// Overall rating, category breakdown, and review grid
 const Reviews = ({ rating = 5.0, reviewCount = 7 }) => {
     return (
         <section className="reviews">
@@ -109,6 +114,7 @@ const Reviews = ({ rating = 5.0, reviewCount = 7 }) => {
                 </span>
             </h2>
 
+            {/* Category rating bars — fill width is score out of 5 */}
             <div className="reviews__categories">
                 {RATING_CATEGORIES.map((category) => (
                     <div key={category.label} className="reviews__category">
@@ -143,4 +149,3 @@ const Reviews = ({ rating = 5.0, reviewCount = 7 }) => {
 };
 
 export default Reviews;
-

@@ -1,8 +1,10 @@
+/* Amenities section — padded block with bottom divider */
 .amenities {
     padding: 48px 0;
     border-bottom: 1px solid #dddddd;
 }
 
+/* Section heading ("What this place offers") */
 .amenities h2 {
     margin: 0 0 24px;
     font-size: 22px;
@@ -10,12 +12,14 @@
     color: #222222;
 }
 
+/* Two-column grid layout for amenity items */
 .amenities__grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px 32px;
 }
 
+/* Single amenity row — icon and label side by side */
 .amenity {
     display: flex;
     align-items: center;
@@ -24,11 +28,13 @@
     color: #222222;
 }
 
+/* Amenity icon — fixed size, won't shrink in flex row */
 .amenity svg {
     font-size: 24px;
     flex-shrink: 0;
 }
 
+/* Outlined "Show all amenities" button below the grid */
 .amenities__show-all {
     margin-top: 24px;
     padding: 13px 23px;
@@ -41,6 +47,7 @@
     cursor: pointer;
 }
 
+/* Stack amenity grid to a single column on small screens */
 @media (max-width: 700px) {
     .amenities__grid {
         grid-template-columns: 1fr;

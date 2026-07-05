@@ -12,6 +12,7 @@ import {
 
 import "./Amenities.css";
 
+// Maps amenity label strings to their React icon components
 const AMENITY_ICONS = {
     "Garden view": FaLeaf,
     Wifi: FaWifi,
@@ -25,6 +26,7 @@ const AMENITY_ICONS = {
     Bicycles: FaBicycle,
 };
 
+// Fallback amenity list when the listing has none defined
 const DEFAULT_AMENITIES = [
     "Garden view",
     "Wifi",
@@ -38,12 +40,15 @@ const DEFAULT_AMENITIES = [
     "Bicycles",
 ];
 
+// Displays a grid of listing amenities with icons
 const Amenities = ({ listing }) => {
+    // Use listing amenities or fall back to defaults
     const amenities =
         listing.amenities?.length > 0
             ? listing.amenities
             : DEFAULT_AMENITIES;
 
+    // Show at most 10 amenities in the grid
     const visibleAmenities = amenities.slice(0, 10);
 
     return (
@@ -52,6 +57,7 @@ const Amenities = ({ listing }) => {
 
             <div className="amenities__grid">
                 {visibleAmenities.map((amenity) => {
+                    // Pick matching icon, or use leaf as a generic fallback
                     const Icon = AMENITY_ICONS[amenity] || FaLeaf;
 
                     return (
@@ -63,6 +69,7 @@ const Amenities = ({ listing }) => {
                 })}
             </div>
 
+            {/* Opens full amenities list — count falls back to 37 if empty */}
             <button type="button" className="amenities__show-all">
                 Show all {amenities.length || 37} amenities
             </button>

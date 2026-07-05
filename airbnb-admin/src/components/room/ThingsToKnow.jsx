@@ -13,12 +13,14 @@ import {
 
 import "./ThingsToKnow.css";
 
+// Three-column section — house rules, health & safety, cancellation policy
 const ThingsToKnow = () => {
     return (
         <section className="things-to-know">
             <h2>Things to know</h2>
 
             <div className="things-to-know__grid">
+                {/* Column 1 — check-in/out times, guest restrictions, and house rules */}
                 <div>
                     <h3>House rules</h3>
                     <ul>
@@ -47,6 +49,7 @@ const ThingsToKnow = () => {
                     </ul>
                 </div>
 
+                {/* Column 2 — cleaning, COVID guidelines, alarms, and security deposit */}
                 <div>
                     <h3>Health &amp; safety</h3>
                     <ul>
@@ -74,6 +77,7 @@ const ThingsToKnow = () => {
                     </button>
                 </div>
 
+                {/* Column 3 — cancellation deadline and policy details link */}
                 <div>
                     <h3>Cancellation policy</h3>
                     <p>Free cancellation before Feb 14</p>

@@ -1,3 +1,4 @@
+/* Page shell — full-height column with header, subnav, content, and footer */
 .admin-form-layout {
     min-height: 100vh;
     display: flex;
@@ -5,6 +6,7 @@
     background: #ffffff;
 }
 
+/* Horizontal navigation bar below the header */
 .admin-form-layout__subnav {
     display: flex;
     flex-wrap: wrap;
@@ -12,6 +14,7 @@
     padding: 20px 40px 0;
 }
 
+/* Pill-shaped nav button — Dashboard, Reservations, Listings, etc. */
 .admin-form-layout__nav-btn {
     padding: 10px 18px;
 
@@ -28,16 +31,19 @@
     transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
+/* Darker border and subtle shadow on hover */
 .admin-form-layout__nav-btn:hover {
     border-color: #222222;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
+/* Active tab — bold text with dark border */
 .admin-form-layout__nav-btn--active {
     border-color: #222222;
     font-weight: 600;
 }
 
+/* Main content area — grows to fill space between nav and footer */
 .admin-form-layout__content {
     flex: 1;
     padding: 32px 40px 64px;

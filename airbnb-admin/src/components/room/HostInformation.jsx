@@ -6,11 +6,14 @@ import {
 
 import "./HostInformation.css";
 
+// Displays host profile, badges, details, and contact info for a listing
 const HostInformation = ({ listing }) => {
+    // Host name from listing data, with fallback
     const hostName = listing?.host?.username || "Ghazal";
 
     return (
         <section className="host">
+            {/* Avatar, name, and join date */}
             <div className="host__profile">
                 <img
                     src="https://i.pravatar.cc/120?img=47"
@@ -24,6 +27,7 @@ const HostInformation = ({ listing }) => {
                 </div>
             </div>
 
+            {/* Host credibility badges — reviews, verification, superhost */}
             <div className="host__badges">
                 <span>
                     <FaStar /> 12 Reviews
@@ -36,6 +40,7 @@ const HostInformation = ({ listing }) => {
                 </span>
             </div>
 
+            {/* Superhost description and response stats */}
             <div className="host__details">
                 <h3>{hostName} is a Superhost</h3>
                 <p>
@@ -50,6 +55,7 @@ const HostInformation = ({ listing }) => {
                 Contact Host
             </button>
 
+            {/* Safety reminder about keeping payments on-platform */}
             <p className="host__notice">
                 <FaShieldAlt />
                 To protect your payment, never transfer money or communicate

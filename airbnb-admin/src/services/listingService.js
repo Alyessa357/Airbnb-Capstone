@@ -115,11 +115,3 @@ export default listingService;
 
 
 
-// export default {
-//     createListing,
-//     getListings,
-//     getListingById,
-//     updateListing,
-//     deleteListing
-
-// };

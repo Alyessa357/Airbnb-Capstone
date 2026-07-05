@@ -6,6 +6,7 @@ import reservationService from "../services/reservationService";
 
 import "../styles/reservationsPage.css";
 
+// Formats a date value as DD/MM/YYYY for the table display
 const formatDate = (dateValue) => {
     if (!dateValue) return "-";
 
@@ -17,12 +18,14 @@ const formatDate = (dateValue) => {
     return `${day}/${month}/${year}`;
 };
 
+// Admin page listing all reservations in a table with delete action
 const ReservationsPage = () => {
     const { token } = useAuth();
     const [reservations, setReservations] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
 
+    // Load reservations when the page mounts
     useEffect(() => {
         fetchReservations();
     }, [token]);
@@ -38,6 +41,7 @@ const ReservationsPage = () => {
         }
     };
 
+    // Delete a reservation after confirmation, then remove from local state
     const handleDelete = async (reservationId) => {
         const confirmed = window.confirm("Delete this reservation?");
         if (!confirmed) {
@@ -79,6 +83,7 @@ const ReservationsPage = () => {
                     </p>
                 )}
 
+                {/* Reservation table — guest, property, dates, and delete action */}
                 {!loading && !error && reservations.length > 0 && (
                     <div className="reservations-page__table-wrap">
                         <table className="reservations-page__table">

@@ -1,3 +1,4 @@
+/* Footer container — light gray background pinned to page bottom */
 .admin-footer {
     margin-top: auto;
     padding: 52px 56px 22px;
@@ -5,6 +6,7 @@
     border-top: 1px solid #e6e6e6;
 }
 
+/* Four-column link grid — Support, Community, Hosting, About */
 .admin-footer__grid {
     max-width: 1140px;
     margin: 0 auto;
@@ -13,6 +15,7 @@
     gap: 48px;
 }
 
+/* Column heading (e.g. "Support") */
 .admin-footer__grid h3 {
     margin: 0 0 16px;
     font-size: 13px;
@@ -20,12 +23,14 @@
     color: #222222;
 }
 
+/* Individual link text in each column */
 .admin-footer__grid p {
     margin: 0 0 12px;
     font-size: 12px;
     color: #717171;
 }
 
+/* Bottom bar — copyright/legal on left, locale and social on right */
 .admin-footer__copyright {
     max-width: 1140px;
     margin: 16px auto 0;
@@ -40,6 +45,7 @@
     flex-wrap: wrap;
 }
 
+/* Left and right groups within the copyright bar */
 .admin-footer__copyright-left,
 .admin-footer__copyright-right {
     display: flex;
@@ -48,6 +54,7 @@
     flex-wrap: wrap;
 }
 
+/* Language selector with globe icon */
 .admin-footer__language {
     display: inline-flex;
     align-items: center;
@@ -56,36 +63,41 @@
 
 
 
-
 /* Responsive design */
 
+/* Fluid padding that scales with viewport width */
 .admin-footer {
     padding: clamp(28px, 5vw, 52px) clamp(16px, 4vw, 56px)
         clamp(16px, 2vw, 22px);
     min-width: 0;
 }
 
+/* Fluid column gap and flexible min-width columns */
 .admin-footer__grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: clamp(20px, 3vw, 48px);
     min-width: 0;
 }
 
+/* Prevent column content from overflowing the grid */
 .admin-footer__grid > div {
     min-width: 0;
 }
 
+/* Fluid heading size and spacing */
 .admin-footer__grid h3 {
     margin: 0 0 clamp(10px, 1.5vw, 16px);
     font-size: clamp(12px, 1.3vw, 13px);
 }
 
+/* Fluid link text with word-break for long URLs */
 .admin-footer__grid p {
     margin: 0 0 clamp(8px, 1.2vw, 12px);
     font-size: clamp(11px, 1.2vw, 12px);
     overflow-wrap: anywhere;
 }
 
+/* Fluid copyright bar spacing and font size */
 .admin-footer__copyright {
     gap: clamp(10px, 2vw, 16px);
     font-size: clamp(11px, 1.2vw, 12px);
@@ -93,11 +105,13 @@
     padding-top: clamp(10px, 1.5vw, 14px);
 }
 
+/* Fluid gap between copyright bar items */
 .admin-footer__copyright-left,
 .admin-footer__copyright-right {
     gap: clamp(6px, 1.5vw, 10px);
 }
 
+/* Two-column grid on medium screens */
 @media (max-width: 900px) {
     .admin-footer {
         padding: 40px 24px 20px;
@@ -109,6 +123,7 @@
     }
 }
 
+/* Two-column grid with fluid gap on medium screens */
 @media (max-width: 900px) {
     .admin-footer__grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -116,6 +131,7 @@
     }
 }
 
+/* Single-column stack on small screens */
 @media (max-width: 430px) {
     .admin-footer {
         padding: clamp(20px, 5vw, 28px) clamp(10px, 3vw, 16px)
@@ -151,6 +167,7 @@
     }
 }
 
+/* Tighter padding and font sizes on very narrow screens */
 @media (max-width: 280px) {
     .admin-footer {
         padding: 16px 8px 12px;
@@ -166,6 +183,7 @@
     }
 }
 
+/* Minimum sizing for extremely narrow viewports */
 @media (max-width: 200px) {
     .admin-footer {
         padding: 12px 6px 10px;
@@ -190,4 +208,3 @@
         gap: 4px;
     }
 }
-

@@ -1,8 +1,10 @@
+/* View listings page container — centered with max width */
 .view-listings {
     max-width: 1100px;
     margin: 0 auto;
 }
 
+/* Page heading ("My Hotel List") */
 .view-listings__title {
     margin: 0 0 24px;
 
@@ -11,6 +13,7 @@
     color: #717171;
 }
 
+/* Loading, empty, or status message text */
 .view-listings__message {
     font-size: 15px;
     color: #717171;
@@ -22,6 +25,7 @@
     color: #ff385c;
 }
 
+/* Listing cards stack — top border separates from title above */
 .view-listings__list {
     border-top: 1px solid #dddddd;
 }

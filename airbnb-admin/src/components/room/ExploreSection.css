@@ -1,8 +1,10 @@
+/* Explore section — padded block with bottom divider */
 .explore-section {
     padding: 48px 0 24px;
     border-bottom: 1px solid #dddddd;
 }
 
+/* Shared heading styles for section title and subsection title */
 .explore-section h2,
 .explore-section h3 {
     margin: 0 0 24px;
@@ -11,22 +13,26 @@
     color: #222222;
 }
 
+/* Extra top spacing before the second subsection heading */
 .explore-section h3 {
     margin-top: 40px;
 }
 
+/* Four-column grid for explore link columns */
 .explore-section__grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 16px 32px;
 }
 
+/* Vertical stack of links within each column */
 .explore-section__column {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
+/* Underlined text-style links inside each column */
 .explore-section__column button {
     border: none;
     background: none;
@@ -38,6 +44,7 @@
     cursor: pointer;
 }
 
+/* Breadcrumb trail row at the bottom of the section */
 .explore-section__breadcrumb {
     display: flex;
     flex-wrap: wrap;
@@ -46,6 +53,7 @@
     margin-top: 32px;
 }
 
+/* Clickable breadcrumb segments styled as underlined links */
 .explore-section__breadcrumb button {
     border: none;
     background: none;
@@ -56,16 +64,19 @@
     cursor: pointer;
 }
 
+/* Non-clickable breadcrumb separators (e.g. "›") */
 .explore-section__breadcrumb span {
     color: #717171;
 }
 
+/* Two-column grid on medium screens */
 @media (max-width: 900px) {
     .explore-section__grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
+/* Single-column grid on small screens */
 @media (max-width: 560px) {
     .explore-section__grid {
         grid-template-columns: 1fr;

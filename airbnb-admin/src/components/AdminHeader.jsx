@@ -6,15 +6,18 @@ import useAuth from "../context/useAuth";
 
 import "../styles/adminHeader.css";
 
+// Top navigation bar — logo, user name, and profile dropdown
 const AdminHeader = () => {
     const [profileOpen, setProfileOpen] = useState(false);
     const profileRef = useRef(null);
     const navigate = useNavigate();
     const { user, logout } = useAuth();
 
+    // Show username, or the part before @ in email, or "User" as fallback
     const displayName =
         user?.username || user?.email?.split("@")[0] || "User";
 
+    // Close dropdown when clicking outside the profile menu
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (
@@ -30,6 +33,7 @@ const AdminHeader = () => {
             document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
+    // Clear session and redirect to the client frontend
     const handleLogout = () => {
         setProfileOpen(false);
         logout();
@@ -39,6 +43,7 @@ const AdminHeader = () => {
 
     return (
         <header className="admin-header">
+            {/* Logo — navigates to dashboard on click */}
             <div
                 className="admin-header__logo"
                 onClick={() => navigate("/dashboard")}
@@ -52,6 +57,7 @@ const AdminHeader = () => {
                     {displayName}
                 </span>
 
+                {/* Profile button with dropdown menu */}
                 <div className="admin-header__profile" ref={profileRef}>
                     <button
                         type="button"

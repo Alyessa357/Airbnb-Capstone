@@ -1,8 +1,10 @@
+/* Host section — padded block with bottom divider */
 .host {
     padding: 48px 0;
     border-bottom: 1px solid #dddddd;
 }
 
+/* Avatar and name row at the top of the section */
 .host__profile {
     display: flex;
     align-items: center;
@@ -10,6 +12,7 @@
     margin-bottom: 24px;
 }
 
+/* Circular host profile photo */
 .host__avatar {
     width: 64px;
     height: 64px;
@@ -17,6 +20,7 @@
     object-fit: cover;
 }
 
+/* Host name heading */
 .host__profile h2 {
     margin: 0 0 4px;
     font-size: 22px;
@@ -24,12 +28,14 @@
     color: #222222;
 }
 
+/* Host subtitle (e.g. "Superhost · 5 years hosting") */
 .host__profile p {
     margin: 0;
     font-size: 16px;
     color: #717171;
 }
 
+/* Row of host badge items (reviews, rating, years hosting) */
 .host__badges {
     display: flex;
     flex-wrap: wrap;
@@ -37,6 +43,7 @@
     margin-bottom: 24px;
 }
 
+/* Single badge — icon and label side by side */
 .host__badges span {
     display: inline-flex;
     align-items: center;
@@ -45,10 +52,12 @@
     color: #222222;
 }
 
+/* Airbnb pink accent on badge icons */
 .host__badges svg {
     color: #ff385c;
 }
 
+/* "Host details" subsection heading */
 .host__details h3 {
     margin: 0 0 12px;
     font-size: 16px;
@@ -56,6 +65,7 @@
     color: #222222;
 }
 
+/* Host bio and response info paragraphs */
 .host__details p {
     margin: 0 0 12px;
     font-size: 16px;
@@ -63,6 +73,7 @@
     color: #222222;
 }
 
+/* Outlined "Contact host" button */
 .host__contact {
     margin-top: 24px;
     padding: 13px 23px;
@@ -75,6 +86,7 @@
     cursor: pointer;
 }
 
+/* Payment protection notice at the bottom */
 .host__notice {
     display: flex;
     align-items: flex-start;
@@ -85,6 +97,7 @@
     color: #717171;
 }
 
+/* Shield icon in the payment notice — won't shrink in flex row */
 .host__notice svg {
     margin-top: 2px;
     flex-shrink: 0;

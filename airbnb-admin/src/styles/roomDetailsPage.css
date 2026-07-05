@@ -1,3 +1,4 @@
+/* Room details page container — centered with max width */
 .room-details {
     width: 100%;
     max-width: 1280px;
@@ -5,6 +6,7 @@
     padding: 8px 0 40px;
 }
 
+/* "← Back to listings" link at the top */
 .room-details__back {
     display: inline-flex;
     align-items: center;
@@ -22,6 +24,7 @@
     text-decoration: underline;
 }
 
+/* Title row — listing name on left, Share/Save on right */
 .room-details__title-row {
     display: flex;
     align-items: flex-start;
@@ -30,6 +33,7 @@
     margin-bottom: 8px;
 }
 
+/* Listing title heading */
 .room-details__title-row h1 {
     margin: 0;
     font-size: 26px;
@@ -38,6 +42,7 @@
     line-height: 1.2;
 }
 
+/* Share and Save action buttons */
 .room-details__actions {
     display: flex;
     align-items: center;
@@ -59,6 +64,7 @@
     cursor: pointer;
 }
 
+/* Rating, reviews, superhost, and location row below title */
 .room-details__meta {
     display: flex;
     flex-wrap: wrap;
@@ -69,11 +75,13 @@
     color: #222222;
 }
 
+/* Pink star icon in the meta row */
 .room-details__meta svg {
     color: #ff385c;
     font-size: 12px;
 }
 
+/* Underlined clickable links in meta (reviews, location) */
 .room-details__meta button {
     border: none;
     background: none;
@@ -85,10 +93,12 @@
     cursor: pointer;
 }
 
+/* Separator dots (·) between meta items */
 .room-details__meta span {
     color: #717171;
 }
 
+/* Two-column layout — main content on left, booking sidebar on right */
 .room-details__body {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 360px;
@@ -96,19 +106,23 @@
     align-items: start;
 }
 
+/* Left column — overview, sleep, amenities, calendar */
 .room-details__main {
     min-width: 0;
 }
 
+/* Full-width sections below the two-column grid — reviews, host, etc. */
 .room-details__full {
     grid-column: 1 / -1;
 }
 
+/* Right column — reservation card and report link */
 .room-details__sidebar {
     display: flex;
     flex-direction: column;
 }
 
+/* "Report this listing" underlined link below the sidebar card */
 .room-details__report {
     display: inline-flex;
     align-items: center;
@@ -126,6 +140,7 @@
     cursor: pointer;
 }
 
+/* Loading and empty state message */
 .room-details__message {
     padding: 80px 40px;
     text-align: center;
@@ -139,6 +154,7 @@
 
 /* Responside design */
 
+/* Single-column layout on medium screens — sidebar below main content */
 @media (max-width: 1100px) {
     .room-details__body {
         grid-template-columns: 1fr;
@@ -150,6 +166,7 @@
     }
 }
 
+/* Stack title and actions vertically on small screens */
 @media (max-width: 700px) {
     .room-details {
         width: 100%;

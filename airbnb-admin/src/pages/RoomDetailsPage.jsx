@@ -25,6 +25,7 @@ import ReservationCard from "../components/listings/ReservationCard";
 
 import "../styles/roomDetailsPage.css";
 
+// Full listing detail page — gallery, overview, booking sidebar, reviews, etc.
 const RoomDetailsPage = () => {
     const { id } = useParams();
     const navigate = useNavigate();
@@ -37,6 +38,7 @@ const RoomDetailsPage = () => {
     const [checkOut, setCheckOut] = useState("");
     const [guestCount, setGuestCount] = useState(2);
 
+    // Fetch listing by ID from the URL param
     useEffect(() => {
         const fetchListing = async () => {
             try {
@@ -55,6 +57,7 @@ const RoomDetailsPage = () => {
         fetchListing();
     }, [id, token]);
 
+    // Number of nights between selected check-in and check-out
     const nights =
         checkIn && checkOut
             ? Math.max(
@@ -96,6 +99,7 @@ const RoomDetailsPage = () => {
                     ← Back to listings
                 </button>
 
+                {/* Title row with share and save actions */}
                 <div className="room-details__title-row">
                     <h1>{listing.title}</h1>
 
@@ -111,6 +115,7 @@ const RoomDetailsPage = () => {
                     </div>
                 </div>
 
+                {/* Rating, reviews, superhost badge, and location */}
                 <div className="room-details__meta">
                     <FaStar />
                     <strong>{rating.toFixed(1)}</strong>
@@ -127,6 +132,7 @@ const RoomDetailsPage = () => {
                 <ImageGallery listing={listing} />
 
                 <div className="room-details__body">
+                    {/* Main content column — overview, sleep, amenities, calendar */}
                     <div className="room-details__main">
                         <ListingOverview listing={listing} />
                         <SleepSection listing={listing} />
@@ -143,6 +149,7 @@ const RoomDetailsPage = () => {
                         />
                     </div>
 
+                    {/* Sidebar — reservation card repurposed as "Update listing" */}
                     <aside className="room-details__sidebar">
                         <ReservationCard
                             listing={listing}
@@ -164,6 +171,7 @@ const RoomDetailsPage = () => {
                         </button>
                     </aside>
 
+                    {/* Full-width sections below the two-column layout */}
                     <div className="room-details__full">
                         <Reviews rating={rating} reviewCount={reviewCount} />
                         <HostInformation listing={listing} />

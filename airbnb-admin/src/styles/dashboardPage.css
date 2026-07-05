@@ -1,8 +1,10 @@
+/* Dashboard page container — centered with max width */
 .dashboard {
     max-width: 1100px;
     margin: 0 auto;
 }
 
+/* Page heading ("Dashboard") */
 .dashboard__title {
     margin: 0 0 24px;
     font-size: 22px;
@@ -10,6 +12,7 @@
     color: #717171;
 }
 
+/* Loading, empty, or error message text */
 .dashboard__message {
     font-size: 15px;
     color: #717171;
@@ -21,6 +24,7 @@
     color: #ff385c;
 }
 
+/* Four-column grid of summary stat cards */
 .dashboard__stats {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -28,6 +32,7 @@
     margin-bottom: 40px;
 }
 
+/* Individual stat card — bordered box with label and value */
 .dashboard__stat-card {
     padding: 20px 22px;
     border: 1px solid #dddddd;
@@ -35,12 +40,14 @@
     background: #ffffff;
 }
 
+/* Muted label above the stat number (e.g. "Total Reservations") */
 .dashboard__stat-label {
     margin: 0 0 10px;
     font-size: 14px;
     color: #717171;
 }
 
+/* Bold stat value (e.g. "12" or "$1,200") */
 .dashboard__stat-value {
     margin: 0;
     font-size: 28px;
@@ -49,6 +56,7 @@
     line-height: 1.2;
 }
 
+/* Row above the listings — section title and optional link */
 .dashboard__section-header {
     display: flex;
     align-items: center;
@@ -57,6 +65,7 @@
     margin-bottom: 8px;
 }
 
+/* Section heading ("My Hotel List") */
 .dashboard__section-title {
     margin: 0;
     font-size: 22px;
@@ -64,6 +73,7 @@
     color: #717171;
 }
 
+/* Underlined "View all" link in the section header */
 .dashboard__view-link {
     border: none;
     background: none;
@@ -79,12 +89,14 @@
     color: #1558b0;
 }
 
+/* Listing cards stack — top border separates from stats above */
 .dashboard__list {
     border-top: 1px solid #dddddd;
 }
 
 /* Responsive design */
 
+/* Two-column stat grid on medium screens */
 @media (max-width: 900px) {
     .dashboard__stats {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -96,6 +108,7 @@
     }
 }
 
+/* Single-column stat grid on small screens */
 @media (max-width: 560px) {
     .dashboard__stats {
         grid-template-columns: 1fr;

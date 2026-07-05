@@ -7,6 +7,7 @@ import useAuth from "../context/useAuth";
 import AdminFormLayout from "../components/AdminFormLayout";
 import "../styles/createListingPage.css";
 
+// Property type options for the listing form dropdown
 const TYPE_OPTIONS = [
     "Entire home",
     "Private room",
@@ -15,6 +16,7 @@ const TYPE_OPTIONS = [
     "Entire Apartment",
 ];
 
+// Form page for editing an existing listing — pre-filled from API data
 const UpdateListingPage = () => {
     const { id } = useParams();
 
@@ -22,6 +24,7 @@ const UpdateListingPage = () => {
 
     const { token } = useAuth();
 
+    // Form field state — populated from fetched listing
     const [title, setTitle] = useState("");
     const [location, setLocation] = useState("");
     const [description, setDescription] = useState("");
@@ -132,6 +135,7 @@ const UpdateListingPage = () => {
 
     // ------------
 
+    // Add amenity to the list if not empty and not a duplicate
     const handleAddAmenity = () => {
     const value = amenityInput.trim();
 
@@ -147,6 +151,7 @@ const UpdateListingPage = () => {
     setAmenityInput("");
 };
 
+// Remove a single amenity tag by name
 const handleRemoveAmenity = (amenity) => {
     setAmenities(
         amenities.filter(
@@ -155,6 +160,7 @@ const handleRemoveAmenity = (amenity) => {
     );
 };
 
+// Add image URL to the preview list
 const handleAddImage = () => {
     const value = imageUrl.trim();
 
@@ -170,6 +176,7 @@ const handleAddImage = () => {
     setImageUrl("");
 };
 
+// Remove an image from the preview list by URL
 const handleRemoveImage = (imageToRemove) => {
     setImages(
         images.filter(
@@ -202,6 +209,7 @@ const handleRemoveImage = (imageToRemove) => {
 
             <form onSubmit={handleSubmit}>
                     <div className="create-listing__grid">
+                        {/* Left column — name, location, description */}
                         <div className="create-listing__column">
                             
                             <div className="create-listing__field">
@@ -246,6 +254,7 @@ const handleRemoveImage = (imageToRemove) => {
                             </div>
                         </div>
 
+                        {/* Right column — rooms, guests, price, fees, amenities */}
                         <div className="create-listing__column">
                             <div className="create-listing__field">
                                 <label>Rooms, Baths, &amp; Type</label>
@@ -318,6 +327,7 @@ const handleRemoveImage = (imageToRemove) => {
                                 />
                             </div>
 
+                            {/* Weekly discount, cleaning, service, and occupancy tax fields */}
                             <div className="create-listing__field">
                                 <label>Fees &amp; Discounts</label>
                                 <div className="create-listing__fees-grid">
@@ -380,6 +390,7 @@ const handleRemoveImage = (imageToRemove) => {
                                 </div>
                             </div>
 
+                            {/* Amenity input with add button and removable tags */}
                             <div className="create-listing__field">
                                 <label htmlFor="listing-amenity">
                                     Amenities
@@ -435,6 +446,7 @@ const handleRemoveImage = (imageToRemove) => {
                         </div>
                     </div>
 
+                    {/* Image URL input, preview grid, and remove buttons */}
                     <div className="create-listing__field create-listing__images-section">
                         <label>Images</label>
 
@@ -491,6 +503,7 @@ const handleRemoveImage = (imageToRemove) => {
                         </div>
                     </div>
 
+                    {/* Submit and cancel buttons */}
                     <div className="create-listing__actions">
                         <button
                             type="submit"

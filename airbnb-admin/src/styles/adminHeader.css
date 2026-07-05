@@ -1,3 +1,4 @@
+/* Top navigation bar — logo on left, user profile on right */
 .admin-header {
     height: 80px;
     padding: 0 40px;
@@ -10,6 +11,7 @@
     border-bottom: 1px solid #ebebeb;
 }
 
+/* Airbnb logo and brand name — clickable, navigates to dashboard */
 .admin-header__logo {
     display: flex;
     align-items: center;
@@ -22,22 +24,26 @@
     cursor: pointer;
 }
 
+/* Right side — username and profile menu button */
 .admin-header__right {
     display: flex;
     align-items: center;
     gap: 16px;
 }
 
+/* Logged-in user's display name */
 .admin-header__user-name {
     font-size: 14px;
     font-weight: 600;
     color: #222222;
 }
 
+/* Profile menu wrapper — positions the dropdown */
 .admin-header__profile {
     position: relative;
 }
 
+/* Pill button — hamburger icon and user avatar */
 .admin-header__profile-btn {
     display: flex;
     align-items: center;
@@ -55,10 +61,12 @@
     cursor: pointer;
 }
 
+/* User circle icon — muted gray */
 .admin-header__profile-btn svg:last-child {
     color: #717171;
 }
 
+/* Dropdown menu — reservations link and logout */
 .admin-header__dropdown {
     position: absolute;
     top: calc(100% + 10px);
@@ -75,6 +83,7 @@
     z-index: 100;
 }
 
+/* Full-width dropdown menu items */
 .admin-header__dropdown button {
     display: block;
     width: 100%;
@@ -92,6 +101,7 @@
     cursor: pointer;
 }
 
+/* Light gray background on menu item hover */
 .admin-header__dropdown button:hover {
     background: #f7f7f7;
 }
@@ -99,6 +109,7 @@
 
 /* Responsive design */
 
+/* Fluid header height and horizontal padding */
 .admin-header {
     height: clamp(56px, 8vw, 80px);
     padding: 0 clamp(12px, 3vw, 40px);
@@ -106,23 +117,27 @@
     min-width: 0;
 }
 
+/* Fluid logo size and gap */
 .admin-header__logo {
     gap: clamp(4px, 1vw, 8px);
     font-size: clamp(16px, 2.2vw, 22px);
     min-width: 0;
 }
 
+/* Fluid Airbnb icon size */
 .admin-header__logo svg {
     width: clamp(22px, 3vw, 32px);
     height: clamp(22px, 3vw, 32px);
     flex-shrink: 0;
 }
 
+/* Fluid gap between username and profile button */
 .admin-header__right {
     gap: clamp(8px, 1.5vw, 16px);
     min-width: 0;
 }
 
+/* Truncate long usernames with ellipsis */
 .admin-header__user-name {
     font-size: clamp(12px, 1.4vw, 14px);
     max-width: clamp(72px, 20vw, 180px);
@@ -131,6 +146,7 @@
     white-space: nowrap;
 }
 
+/* Fluid profile button sizing */
 .admin-header__profile-btn {
     gap: clamp(6px, 1vw, 12px);
     padding: clamp(5px, 0.8vw, 8px) clamp(5px, 0.8vw, 8px)
@@ -138,21 +154,25 @@
     font-size: clamp(13px, 1.5vw, 16px);
 }
 
+/* Fluid user avatar icon size */
 .admin-header__profile-btn svg:last-child {
     width: clamp(22px, 3vw, 28px);
     height: clamp(22px, 3vw, 28px);
 }
 
+/* Fluid dropdown width and offset */
 .admin-header__dropdown {
     min-width: clamp(140px, 40vw, 180px);
     top: calc(100% + clamp(6px, 1.5vw, 10px));
 }
 
+/* Fluid dropdown item padding and font size */
 .admin-header__dropdown button {
     padding: clamp(10px, 1.5vw, 12px) clamp(12px, 2vw, 16px);
     font-size: clamp(12px, 1.4vw, 14px);
 }
 
+/* Compact header on small screens — hide logo text and hamburger */
 @media (max-width: 430px) {
     .admin-header {
         height: auto;
@@ -199,6 +219,7 @@
     }
 }
 
+/* Hide username on very narrow screens */
 @media (max-width: 280px) {
     .admin-header__user-name {
         display: none;
@@ -218,6 +239,7 @@
     }
 }
 
+/* Minimum sizing for extremely narrow viewports */
 @media (max-width: 200px) {
     .admin-header {
         padding: 6px 4px;

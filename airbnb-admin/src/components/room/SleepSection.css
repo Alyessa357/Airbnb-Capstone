@@ -1,8 +1,10 @@
+/* Sleep section — padded block with bottom divider */
 .sleep-section {
     padding: 48px 0;
     border-bottom: 1px solid #dddddd;
 }
 
+/* Section heading ("Where you'll sleep") */
 .sleep-section h2 {
     margin: 0 0 24px;
     font-size: 22px;
@@ -10,6 +12,7 @@
     color: #222222;
 }
 
+/* Bedroom card — bordered container with image and label below */
 .sleep-section__card {
     max-width: 320px;
     border: 1px solid #dddddd;
@@ -17,16 +20,19 @@
     overflow: hidden;
 }
 
+/* Bedroom photo at the top of the card */
 .sleep-section__card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
 }
 
+/* Text area below the image — room name and bed type */
 .sleep-section__card div {
     padding: 16px;
 }
 
+/* Room name (e.g. "Bedroom") */
 .sleep-section__card h3 {
     margin: 0 0 4px;
     font-size: 16px;
@@ -34,6 +40,7 @@
     color: #222222;
 }
 
+/* Bed description (e.g. "1 queen bed") */
 .sleep-section__card p {
     margin: 0;
     font-size: 14px;
