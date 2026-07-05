@@ -1,6 +1,7 @@
 import { FaStar } from "react-icons/fa";
 
 import useAuth from "../../context/useAuth";
+import useLocale from "../../context/useLocale";
 
 import "./ReservationCard.css";
 
@@ -21,6 +22,7 @@ const ReservationCard = ({
     loading,
 }) => {
     const { token } = useAuth();
+    const { t, formatPrice } = useLocale();
 
     const nights =
         checkIn && checkOut
@@ -57,14 +59,14 @@ const ReservationCard = ({
         <div className="reservation-card">
             <div className="reservation-card__header">
                 <p className="reservation-card__price">
-                    <span>${nightlyRate}</span> / night
+                    <span>{formatPrice(nightlyRate)}</span> {t("perNight")}
                 </p>
 
                 <div className="reservation-card__rating">
                     <FaStar />
                     <span>{rating.toFixed(1)}</span>
                     <button type="button" className="reservation-card__reviews">
-                        {reviewCount} reviews
+                        {reviewCount} {t("reviews")}
                     </button>
                 </div>
             </div>
@@ -133,37 +135,37 @@ const ReservationCard = ({
                 <div className="reservation-card__breakdown">
                     <div className="reservation-card__line">
                         <span>
-                            ${nightlyRate} x {nights} night
-                            {nights > 1 ? "s" : ""}
+                            {formatPrice(nightlyRate)} x {nights}{" "}
+                            {nights > 1 ? t("nights") : t("night")}
                         </span>
-                        <span>${subtotal}</span>
+                        <span>{formatPrice(subtotal)}</span>
                     </div>
 
                     {weeklyDiscount > 0 && (
                         <div className="reservation-card__line reservation-card__line--discount">
-                            <span>Weekly discount</span>
-                            <span>-${weeklyDiscount}</span>
+                            <span>{t("weeklyDiscount")}</span>
+                            <span>-{formatPrice(weeklyDiscount)}</span>
                         </div>
                     )}
 
                     <div className="reservation-card__line">
-                        <span>Cleaning fee</span>
-                        <span>${cleaningFee}</span>
+                        <span>{t("cleaningFee")}</span>
+                        <span>{formatPrice(cleaningFee)}</span>
                     </div>
 
                     <div className="reservation-card__line">
-                        <span>Service fee</span>
-                        <span>${serviceFee}</span>
+                        <span>{t("serviceFee")}</span>
+                        <span>{formatPrice(serviceFee)}</span>
                     </div>
 
                     <div className="reservation-card__line">
-                        <span>Occupancy taxes and fees</span>
-                        <span>${occupancyTaxes}</span>
+                        <span>{t("occupancyTaxes")}</span>
+                        <span>{formatPrice(occupancyTaxes)}</span>
                     </div>
 
                     <div className="reservation-card__total">
-                        <span>Total</span>
-                        <span>${total}</span>
+                        <span>{t("total")}</span>
+                        <span>{formatPrice(total)}</span>
                     </div>
                 </div>
             )}

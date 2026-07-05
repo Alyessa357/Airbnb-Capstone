@@ -2,10 +2,13 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaHeart, FaRegHeart, FaStar } from "react-icons/fa";
 
+import useLocale from "../../context/useLocale";
+
 import "./ListingCard.css";
 
 const ListingCard = ({ listing }) => {
     const navigate = useNavigate();
+    const { t, formatPrice } = useLocale();
     const [saved, setSaved] = useState(false);
 
     const rating = listing.rating || 4.8;
@@ -70,12 +73,12 @@ const ListingCard = ({ listing }) => {
                         </span>
                         <FaStar className="listing-card__star" />
                         <span className="listing-card__reviews">
-                            ({reviewCount} reviews)
+                            ({reviewCount} {t("reviews")})
                         </span>
                     </div>
 
                     <p className="listing-card__price">
-                        <span>${listing.price}</span> / night
+                        <span>{formatPrice(listing.price)}</span> {t("perNight")}
                     </p>
                 </div>
             </div>
