@@ -10,9 +10,9 @@
 }
 
 /* Airbnb logo text — pink brand color, clickable */
-.logo {
-    font-size: 24px;
-    font-weight: bold;
+.header__logo {
+    display: flex;
+    align-items: center;
     color: #ff385c;
     cursor: pointer;
 }

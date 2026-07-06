@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate, Link, useSearchParams } from "react-router-dom";
-import { FaAirbnb } from "react-icons/fa";
-
 import useAuth from "../context/useAuth";
 import authService from "../services/authService";
+import Logo from "../components/Logo";
 
 import "./LoginPage.css";
 
@@ -113,8 +112,7 @@ const LoginPage = () => {
                     
                 }}
             >
-                <FaAirbnb size={32} />
-                <span>airbnb</span>
+                <Logo />
             </Link>
 
             <div className="login-page__content">

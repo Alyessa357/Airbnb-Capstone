@@ -1,8 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaAirbnb, FaBars, FaUserCircle } from "react-icons/fa";
+import { FaBars, FaUserCircle } from "react-icons/fa";
 
 import useAuth from "../context/useAuth";
+import Logo from "./Logo";
 
 import "../styles/adminHeader.css";
 
@@ -48,8 +49,7 @@ const AdminHeader = () => {
                 className="admin-header__logo"
                 onClick={() => navigate("/dashboard")}
             >
-                <FaAirbnb size={32} />
-                <span>airbnb</span>
+                 <Logo />
             </div>
 
             <div className="admin-header__right">

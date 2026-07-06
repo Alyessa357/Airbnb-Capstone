@@ -15,12 +15,7 @@
 .admin-header__logo {
     display: flex;
     align-items: center;
-    gap: 8px;
-
     color: #ff385c;
-    font-size: 22px;
-    font-weight: 700;
-
     cursor: pointer;
 }
 
@@ -48,16 +43,12 @@
     display: flex;
     align-items: center;
     gap: 12px;
-
     padding: 8px 8px 8px 14px;
-
     border: 1px solid #dddddd;
     border-radius: 999px;
     background: #ffffff;
-
     color: #222222;
     font-size: 16px;
-
     cursor: pointer;
 }
 
@@ -71,15 +62,12 @@
     position: absolute;
     top: calc(100% + 10px);
     right: 0;
-
     min-width: 160px;
     padding: 8px 0;
-
     background: #ffffff;
     border: 1px solid #ebebeb;
     border-radius: 12px;
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
-
     z-index: 100;
 }
 
@@ -87,17 +75,13 @@
 .admin-header__dropdown button {
     display: block;
     width: 100%;
-
     border: none;
     background: transparent;
-
     padding: 12px 16px;
-
     text-align: left;
     font-size: 14px;
     font-weight: 500;
     color: #222222;
-
     cursor: pointer;
 }
 
@@ -119,16 +103,13 @@
 
 /* Fluid logo size and gap */
 .admin-header__logo {
-    gap: clamp(4px, 1vw, 8px);
-    font-size: clamp(16px, 2.2vw, 22px);
     min-width: 0;
 }
 
 /* Fluid Airbnb icon size */
-.admin-header__logo svg {
-    width: clamp(22px, 3vw, 32px);
-    height: clamp(22px, 3vw, 32px);
-    flex-shrink: 0;
+ .admin-header__logo .logo {
+    width: clamp(80px, 12vw, 102px);
+    height: clamp(24px, 3.75vw, 32px);
 }
 
 /* Fluid gap between username and profile button */
@@ -180,13 +161,9 @@
         padding: clamp(8px, 2.5vw, 12px) clamp(8px, 3vw, 12px);
     }
 
-    .admin-header__logo span {
-        display: none;
-    }
-
-    .admin-header__logo svg {
-        width: clamp(20px, 6vw, 26px);
-        height: clamp(20px, 6vw, 26px);
+    .admin-header__logo .logo {
+        width: clamp(64px, 18vw, 80px);
+        height: clamp(20px, 5.5vw, 25px);
     }
 
     .admin-header__user-name {
@@ -246,7 +223,11 @@
         min-height: 44px;
     }
 
-    .admin-header__logo svg,
+    .admin-header__logo .logo {
+        width: 56px;
+        height: 18px;
+    }
+
     .admin-header__profile-btn svg:last-child {
         width: 18px;
         height: 18px;

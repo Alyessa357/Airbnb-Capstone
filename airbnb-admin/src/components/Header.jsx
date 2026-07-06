@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 // Authentication hook
 import useAuth from "../context/useAuth";
+import Logo from "./Logo";
 
 // Styling
 import "../styles/header.css";
@@ -28,10 +29,10 @@ function Header() {
 
             {/* Airbnb Logo */}
             <div
-                className="logo"
+                className="header__logo"
                 onClick={() => navigate("/dashboard")}
             >
-                Airbnb Admin
+                <Logo />
             </div>
 
             {/* User Section */}
