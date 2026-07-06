@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { useNavigate, Link, useSearchParams } from "react-router-dom";
-import { FaAirbnb } from "react-icons/fa";
+// import { FaAirbnb } from "react-icons/fa";---
 
 import authService from "../services/authService";
 import useAuth from "../context/useAuth";
+import Logo from "../components/layout/Logo";
 
 import "./LoginPage.css";
 
@@ -99,10 +100,10 @@ const LoginPage = () => {
     };
 
     return (
+        // Logo - (navigates to home page onclick)
         <div className="login-page">
             <Link to="/" className="login-page__logo">
-                <FaAirbnb size={32} />
-                <span>airbnb</span>
+                <Logo />
             </Link>
 
             <div className="login-page__content">

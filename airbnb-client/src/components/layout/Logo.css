@@ -1,0 +1,14 @@
+/* SVG logo rendered as a CSS mask — inherits color from parent */
+.logo {
+    display: block;
+    width: clamp(80px, 12vw, 102px);
+    height: clamp(24px, 3.75vw, 32px);
+    background-color: currentColor;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    flex-shrink: 0;
+}

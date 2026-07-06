@@ -1,11 +1,10 @@
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
-import { FaAirbnb, FaGlobe, FaBars, FaUserCircle } from "react-icons/fa";
-
+import { FaGlobe, FaBars, FaUserCircle } from "react-icons/fa";
 import SearchBar from "./SearchBar";
 import CompactSearchBar from "./CompactSearchBar";
 import DetailsSearchBar from "./DetailsSearchBar";
+import Logo from "./Logo";
 import useAuth from "../../context/useAuth";
 import "./Header.css";
 
@@ -115,8 +114,7 @@ const Header = ({ variant = "default" }) => {
                     className="header__logo"
                     onClick={() => navigate("/")}
                 >
-                    <FaAirbnb size={32} />
-                    <span>airbnb</span>
+                     <Logo />
                 </div>
 
                 {/* Center nav — only on default home header */}
